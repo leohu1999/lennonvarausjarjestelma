@@ -19,7 +19,9 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="77737cd1-010a-4474-9433-e546030cda9b" name="Default Changelist" comment="Homepage" />
+    <list default="true" id="77737cd1-010a-4474-9433-e546030cda9b" name="Default Changelist" comment="yes">
+      <change beforePath="$PROJECT_DIR$/server/server2.js" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -29,6 +31,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="HTML File" />
+        <option value="JavaScript File" />
       </list>
     </option>
   </component>
@@ -76,7 +79,7 @@
       <workItem from="1605858756774" duration="135000" />
       <workItem from="1605858981690" duration="183000" />
       <workItem from="1605860043028" duration="241000" />
-      <workItem from="1605860310816" duration="140000" />
+      <workItem from="1605860310816" duration="184000" />
     </task>
     <task id="LOCAL−00001" summary="Test">
       <created>1605858778523</created>
@@ -102,7 +105,13 @@
       <option name="presentableId" value="LOCAL−00004" />
       <updated>1605860394258</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL−00005" summary="yes">
+      <created>1605860478261</created>
+      <option name="number" value="LOCAL−00005" />
+      <option name="presentableId" value="LOCAL−00005" />
+      <updated>1605860478261</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -124,7 +133,8 @@
     <MESSAGE value="Test" />
     <MESSAGE value="Testi" />
     <MESSAGE value="Homepage" />
-    <option name="LAST_COMMIT_MESSAGE" value="Homepage" />
+    <MESSAGE value="yes" />
+    <option name="LAST_COMMIT_MESSAGE" value="yes" />
   </component>
   <component name="WindowStateProjectService">
     <state x="223" y="67" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1605858655075">
