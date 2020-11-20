@@ -1,12 +1,20 @@
 {
   "name": "lennonvarausjarjestelma",
   "version": "1.0.0",
-  "description": "",
+  "description": "Lennonvarausjärjestelmä",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
-  "author": "",
-  "license": "ISC"
+  "author": "Teemu Luhtanen & Leo Huovinen",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://gitlab.com/TEMETS/lennonvarausjarjestelma.git"
+  },
+  "bugs": {
+    "url": "https://gitlab.com/TEMETS/lennonvarausjarjestelma/issues"
+  },
+  "homepage": "https://gitlab.com/TEMETS/lennonvarausjarjestelma#readme"
 }
