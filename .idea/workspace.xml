@@ -19,10 +19,11 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="77737cd1-010a-4474-9433-e546030cda9b" name="Default Changelist" comment="CSS file">
-      <change afterPath="$PROJECT_DIR$/css/styles.css" afterDir="false" />
+    <list default="true" id="77737cd1-010a-4474-9433-e546030cda9b" name="Default Changelist" comment="Navigation baari">
+      <change afterPath="$PROJECT_DIR$/fonts/Goldman-Bold.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/fonts/Goldman-Regular.ttf" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/css/style.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/styles.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/index.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -65,6 +66,7 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Teemu\lennonvarausjarjestelma\fonts" />
       <recent name="C:\Users\Teemu\lennonvarausjarjestelma\css" />
       <recent name="C:\Users\Teemu\lennonvarausjarjestelma" />
     </key>
@@ -94,7 +96,9 @@
       <workItem from="1605860043028" duration="241000" />
       <workItem from="1605860310816" duration="458000" />
       <workItem from="1605861178249" duration="28000" />
-      <workItem from="1606163312571" duration="1796000" />
+      <workItem from="1606163312571" duration="2111000" />
+      <workItem from="1606201595782" duration="10000" />
+      <workItem from="1606245795872" duration="1249000" />
     </task>
     <task id="LOCAL−00001" summary="Test">
       <created>1605858778523</created>
@@ -138,7 +142,13 @@
       <option name="presentableId" value="LOCAL−00007" />
       <updated>1605860728113</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL−00008" summary="Navigation baari">
+      <created>1606165433758</created>
+      <option name="number" value="LOCAL−00008" />
+      <option name="presentableId" value="LOCAL−00008" />
+      <updated>1606165433758</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -162,37 +172,38 @@
     <MESSAGE value="Homepage" />
     <MESSAGE value="yes" />
     <MESSAGE value="CSS file" />
-    <option name="LAST_COMMIT_MESSAGE" value="CSS file" />
+    <MESSAGE value="Navigation baari" />
+    <option name="LAST_COMMIT_MESSAGE" value="Navigation baari" />
   </component>
   <component name="WindowStateProjectService">
     <state x="223" y="67" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1605858655075">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="223" y="67" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.824@0.0.1536.824" timestamp="1605858655075" />
-    <state x="529" y="214" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1605858366063">
+    <state x="529" y="214" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1606246569250">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="529" y="214" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1536.824@0.0.1536.824" timestamp="1605858366063" />
-    <state width="1515" height="210" key="GridCell.Tab.0.bottom" timestamp="1606163342570">
+    <state x="529" y="214" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1536.824@0.0.1536.824" timestamp="1606246569250" />
+    <state width="1515" height="210" key="GridCell.Tab.0.bottom" timestamp="1606165443629">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1515" height="210" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1606163342570" />
-    <state width="1515" height="210" key="GridCell.Tab.0.center" timestamp="1606163342570">
+    <state width="1515" height="210" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1606165443629" />
+    <state width="1515" height="210" key="GridCell.Tab.0.center" timestamp="1606165443629">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1515" height="210" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1606163342570" />
-    <state width="1515" height="210" key="GridCell.Tab.0.left" timestamp="1606163342570">
+    <state width="1515" height="210" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1606165443629" />
+    <state width="1515" height="210" key="GridCell.Tab.0.left" timestamp="1606165443628">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1515" height="210" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1606163342570" />
-    <state width="1515" height="210" key="GridCell.Tab.0.right" timestamp="1606163342570">
+    <state width="1515" height="210" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1606165443628" />
+    <state width="1515" height="210" key="GridCell.Tab.0.right" timestamp="1606165443629">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1515" height="210" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1606163342570" />
-    <state x="361" y="145" key="Vcs.Push.Dialog.v2" timestamp="1605860757737">
+    <state width="1515" height="210" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1606165443629" />
+    <state x="361" y="145" key="Vcs.Push.Dialog.v2" timestamp="1606165437138">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="361" y="145" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1605860757737" />
+    <state x="361" y="145" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1606165437138" />
     <state x="546" y="146" key="com.intellij.openapi.vcs.changes.SpecificFilesViewDialog" timestamp="1605860517474">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
