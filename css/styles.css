@@ -1,5 +1,7 @@
 body {
     background: #DCDCDC;
+    margin: 0;
+    padding: 0;
 }
 ul {
     list-style-type: none;
@@ -39,8 +41,27 @@ h1 {
     text-decoration: underline;
     font-family: Goldman-Regular;
 }
+h3 {
+    text-align: center;
+    color: #0000FF;
+    font-family: Goldman-Regular;
+    padding-top: 50px;
+}
+p {
+    text-align: center;
+    color: #0000FF;
+    font-family: Goldman-Regular;
+    padding-top: 20px;
+}
 #navigation {
     font-family: Goldman-Regular;
+}
+#logo {
+    width: 1536px;
+    height: 200px;
+    object-fit: cover;
+    margin: 0;
+    padding: 0;
 }
 @font-face {
     font-family: Goldman-Bold;
