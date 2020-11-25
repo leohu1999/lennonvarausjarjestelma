@@ -53,6 +53,38 @@ p {
     font-family: Goldman-Regular;
     padding-top: 20px;
 }
+#kohde {
+    position: relative;
+    padding-top: 20px;
+    font-family: Goldman-Bold;
+    font-size: larger;
+    right: 180px;
+}
+#lahto{
+    position: relative;
+    left: 180px;
+    bottom: 110px;
+    font-family: Goldman-Bold;
+    font-size: larger;
+}
+#paikat{
+    position: relative;
+    right: 180px;
+    bottom: 110px;
+    font-family: Goldman-Bold;
+    font-size: larger;
+}
+#hae{
+    position: relative;
+    font-family: Goldman-Bold;
+    font-size: larger;
+    width: 250px;
+    height: 50px;
+    left: 820px;
+    bottom: 160px;
+    color: white;
+    background: #4682B4;
+}
 #navigation {
     font-family: Goldman-Regular;
 }
@@ -62,6 +94,32 @@ p {
     object-fit: cover;
     margin: 0;
     padding: 0;
+}
+#input1 {
+    position: relative;
+    display: block;
+    margin : 0 auto;
+    height: 20px;
+    width: 250px;
+    right: 180px;
+}
+#input2 {
+    position: relative;
+    display: block;
+    margin : 0 auto;
+    height: 22px;
+    width: 250px;
+    bottom: 108px;
+    left: 180px;
+}
+#input3 {
+    position: relative;
+    display: block;
+    margin : 0 auto;
+    height: 22px;
+    width: 250px;
+    bottom: 108px;
+    right: 180px;
 }
 @font-face {
     font-family: Goldman-Bold;

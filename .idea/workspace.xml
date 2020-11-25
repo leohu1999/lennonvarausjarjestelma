@@ -19,16 +19,11 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="77737cd1-010a-4474-9433-e546030cda9b" name="Default Changelist" comment="CSS tyylejä ja fontit">
-      <change afterPath="$PROJECT_DIR$/img/lennonvaraus.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/akkilahdot.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/kohteet.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/ohjeet.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/omat.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/varaus.html" afterDir="false" />
+    <list default="true" id="77737cd1-010a-4474-9433-e546030cda9b" name="Default Changelist" comment="Logo, html-sivut sekä hieman CSS-korjauksia.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/css/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/styles.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/varaus.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/varaus.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/server.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/server.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -108,7 +103,8 @@
       <workItem from="1606163312571" duration="2111000" />
       <workItem from="1606201595782" duration="10000" />
       <workItem from="1606245795872" duration="1279000" />
-      <workItem from="1606252695082" duration="2409000" />
+      <workItem from="1606252695082" duration="2683000" />
+      <workItem from="1606299624791" duration="3235000" />
     </task>
     <task id="LOCAL−00001" summary="Test">
       <created>1605858778523</created>
@@ -164,7 +160,13 @@
       <option name="presentableId" value="LOCAL−00009" />
       <updated>1606247075667</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL−00010" summary="Logo, html-sivut sekä hieman CSS-korjauksia.">
+      <created>1606255675973</created>
+      <option name="number" value="LOCAL−00010" />
+      <option name="presentableId" value="LOCAL−00010" />
+      <updated>1606255675973</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -190,7 +192,8 @@
     <MESSAGE value="CSS file" />
     <MESSAGE value="Navigation baari" />
     <MESSAGE value="CSS tyylejä ja fontit" />
-    <option name="LAST_COMMIT_MESSAGE" value="CSS tyylejä ja fontit" />
+    <MESSAGE value="Logo, html-sivut sekä hieman CSS-korjauksia." />
+    <option name="LAST_COMMIT_MESSAGE" value="Logo, html-sivut sekä hieman CSS-korjauksia." />
   </component>
   <component name="WindowStateProjectService">
     <state x="223" y="67" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1605858655075">
@@ -221,10 +224,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="1515" height="210" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1606165443629" />
-    <state x="361" y="145" key="Vcs.Push.Dialog.v2" timestamp="1606247080329">
+    <state x="361" y="145" key="Vcs.Push.Dialog.v2" timestamp="1606255692773">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="361" y="145" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1606247080329" />
+    <state x="361" y="145" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1606255692773" />
     <state x="546" y="146" key="com.intellij.openapi.vcs.changes.SpecificFilesViewDialog" timestamp="1605860517474">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
