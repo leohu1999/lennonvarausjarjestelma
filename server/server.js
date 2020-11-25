@@ -22,8 +22,7 @@ const con = mysql.createConnection({
 
 app.get('/', function (req, res) {
     res.sendFile(path.join(__dirname + '/public/index.html'));
-    console.log("Homepage loaded!");
-    res.send('Hello GET');
+    console.log("Etusivu ladattu!");
 
 })
 
@@ -31,5 +30,4 @@ const server = app.listen(8080, function () {
     const host = server.address().address;
     const port = server.address().port;
 
-    console.log("Example app listening at http://%s:%s", host, port)
 });
