@@ -3,7 +3,7 @@ body {
     margin: 0;
     padding: 0;
 }
-ul {
+nav ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
@@ -16,11 +16,11 @@ ul {
 
 }
 
-li {
+nav li {
     display: inline-block;
 }
 
-li a {
+nav li a {
     display: block;
     color: white;
     text-align: center;
@@ -28,7 +28,7 @@ li a {
     text-decoration: none;
 }
 
-li a:hover {
+nav li a:hover {
     background-color: #191970;
 }
 
@@ -45,40 +45,46 @@ h3 {
     text-align: center;
     color: #0000FF;
     font-family: Goldman-Regular;
-    padding-top: 50px;
+    padding-top: 30px;
 }
-p {
+#etusivup {
     text-align: center;
     color: #0000FF;
     font-family: Goldman-Regular;
-    padding-top: 20px;
+    padding-top: 30px;
 }
 #kohde {
+    text-align: center;
     position: relative;
-    padding-top: 20px;
+    padding-top: 10px;
     font-family: Goldman-Bold;
     font-size: larger;
     right: 180px;
+    color: #0000FF;
 }
 #lahto{
+    text-align: center;
     position: relative;
     left: 180px;
-    bottom: 110px;
+    bottom: 88px;
     font-family: Goldman-Bold;
     font-size: larger;
+    color: #0000FF;
 }
 #paikat{
+    text-align: center;
     position: relative;
     right: 180px;
-    bottom: 110px;
+    bottom: 100px;
     font-family: Goldman-Bold;
     font-size: larger;
+    color: #0000FF;
 }
 #hae{
     position: relative;
     font-family: Goldman-Bold;
     font-size: larger;
-    width: 250px;
+    width: 254px;
     height: 50px;
     left: 820px;
     bottom: 160px;
@@ -102,6 +108,7 @@ p {
     height: 20px;
     width: 250px;
     right: 180px;
+    bottom: 10px;
 }
 #input2 {
     position: relative;
@@ -109,7 +116,7 @@ p {
     margin : 0 auto;
     height: 22px;
     width: 250px;
-    bottom: 108px;
+    bottom: 98px;
     left: 180px;
 }
 #input3 {
@@ -120,6 +127,35 @@ p {
     width: 250px;
     bottom: 108px;
     right: 180px;
+}
+#ohjeet  {
+    text-align: center;
+    list-style-position: inside;
+}
+#ohjeetvaraa{
+    position: relative;
+    right: 300px;
+    font-size: larger;
+    font-family: Goldman-Bold;
+    color: #0000FF;
+    padding-top: 20px;
+
+}
+#ohjeetomat{
+    position: relative;
+    right: 275px;
+    font-size: larger;
+    font-family: Goldman-Bold;
+    color: #0000FF;
+    padding-top: 20px;
+
+}
+.ohjeetp{
+    text-align: center;
+    font-family: Goldman-Regular;
+    color: #0000FF;
+    margin-top: 30px;
+    margin-bottom: 30px;
 }
 @font-face {
     font-family: Goldman-Bold;
