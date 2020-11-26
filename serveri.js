@@ -10,16 +10,16 @@ const path = require('path');
 const bodyParser = require('body-parser');
 
 const util = require('util');
-
+var http = require('http')
 const url = require('url');
 
 const con = mysql.createConnection({
     host: "localhost",
     user: "olso",
     password: "olso",
-    database: "example_db"
+    database: "flights"
 });
-
+const query = util.promisify(con.query).bind(con);
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.get('/', function (req, res) {
@@ -27,6 +27,37 @@ app.get('/', function (req, res) {
     console.log("Etusivu ladattu!");
 
 })
+app.get('/x', function(request,response){
+    fetchData(response);
+});
+function executeQuery(sql , cb){
+    con.query(sql, function (error, result, fields){
+        if(error) {throw error}
+        cb(result);
+    })
+}
+function fetchData(response){
+    executeQuery("SELECT destination_name, country FROM destination", function(result){
+        console.log(result);
+        var body = fs.readFileSync(__dirname + '/public/akkilahdot.html',"utf-8");
+        response.writeHead(200,{"Content-Type" : "text/html"});
+        response.write(body);
+        response.write('<table id="lennot"><tr>');
+        for(var column in result[0]){
+            response.write('<td><label>' + column + '</label></td>');
+
+        }
+        response.write('</tr>')
+        for(var row in result){
+            response.write('<tr>');
+            for (var column in result[row]){
+                response.write('<td><label class="label">'+ result[row][column] +'</label></td>')
+            }
+            response.write('</tr>')
+        }
+        response.end('</table>')
+    });
+}
 
 app.get('/public/index.html', function (req, res) {
     res.sendFile(path.join(__dirname + '/public/index.html'));
@@ -47,7 +78,8 @@ app.get('/public/omat.html', function (req, res) {
 })
 
 app.get('/public/akkilahdot.html', function (req, res) {
-    res.sendFile(path.join(__dirname + '/public/akkilahdot.html'));
+    fetchData(res);
+    //res.sendFile(path.join(__dirname + '/public/akkilahdot.html'));
     console.log("Äkkilähdöt ladattu!");
 
 })

@@ -19,5 +19,22 @@
 </nav>
 <h1>Äkkilähdöt</h1>
 
+<script type="text/javascript">
+    var opts = {
+        url: 'http://localhost:8080/akkilahdot.html/'
+    };
+
+    fetch(opts)
+        .then((res) => {
+            if (res.ok) {
+                return res.json();
+            }
+        })
+        .catch(console.log);
+
+    fetch('/public/akkilahdot.html')
+        .then(response => response.json())
+        .then(json => console.log(json));
+</script>
 </body>
 </html>
