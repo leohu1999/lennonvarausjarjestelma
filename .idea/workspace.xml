@@ -19,11 +19,8 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="77737cd1-010a-4474-9433-e546030cda9b" name="Default Changelist" comment="Logo, html-sivut sekä hieman CSS-korjauksia.">
+    <list default="true" id="77737cd1-010a-4474-9433-e546030cda9b" name="Default Changelist" comment="Tietokanta">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/css/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/styles.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/varaus.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/varaus.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/server.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/server.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -65,14 +62,14 @@
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\Teemu\lennonvarausjarjestelma\img" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\Teemu\lennonvarausjarjestelma\img" />
       <recent name="C:\Users\Teemu\lennonvarausjarjestelma\fonts" />
       <recent name="C:\Users\Teemu\lennonvarausjarjestelma\css" />
       <recent name="C:\Users\Teemu\lennonvarausjarjestelma" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Teemu\lennonvarausjarjestelma\img" />
     </key>
   </component>
   <component name="RunManager">
@@ -224,10 +221,11 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="1515" height="210" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1606165443629" />
-    <state x="361" y="145" key="Vcs.Push.Dialog.v2" timestamp="1606255692773">
-      <screen x="0" y="0" width="1536" height="824" />
+    <state x="451" y="183" key="Vcs.Push.Dialog.v2" timestamp="1606308102556">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="361" y="145" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1606255692773" />
+    <state x="451" y="183" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1606308102556" />
     <state x="546" y="146" key="com.intellij.openapi.vcs.changes.SpecificFilesViewDialog" timestamp="1605860517474">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
