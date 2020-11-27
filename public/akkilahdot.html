@@ -18,23 +18,11 @@
     </ul>
 </nav>
 <h1>Äkkilähdöt</h1>
+<form action="/public/akkilahdot.html" method="POST" style="text-align:center;">
+    <input type="time" name="Startdate" placeholder="Enter time">
+    <input type="time" name="Enddate" placeholder="Enter time">
+    <button type="submit">Submit</button>
+</form>
 
-<script type="text/javascript">
-    var opts = {
-        url: 'http://localhost:8080/akkilahdot.html/'
-    };
-
-    fetch(opts)
-        .then((res) => {
-            if (res.ok) {
-                return res.json();
-            }
-        })
-        .catch(console.log);
-
-    fetch('/public/akkilahdot.html')
-        .then(response => response.json())
-        .then(json => console.log(json));
-</script>
 </body>
 </html>
