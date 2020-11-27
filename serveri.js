@@ -53,6 +53,7 @@ var body = fs.readFileSync(__dirname + '/public/akkilahdot.html', "utf-8")
 var d = new Date();
 var hour = d.getUTCHours() +2;
 var minute = d.getUTCMinutes();
+var month = d.getMonth() +1
 
 app.post('/public/akkilahdot.html', function (req, response) {
     response.writeHead(200, {"Content-Type": "text/html"});
@@ -64,7 +65,8 @@ app.post('/public/akkilahdot.html', function (req, response) {
 
     response.write('</tr>');
 
-    let sql = "SELECT time, destination_destination_id FROM schedule WHERE time >= '" +req.body.Startdate+ "' AND time <= '" + req.body.Enddate + "';";
+    let sql = "SELECT time, destination_destination_id FROM schedule WHERE date = '" + d.getFullYear() + "-" + month + "-" +d.getUTCDate()+ "' AND time >= '" +req.body.Startdate+ "' AND time <= '" + req.body.Enddate + "';";
+    console.log(sql);
     (async () => {
         try {
 
@@ -119,7 +121,7 @@ app.get('/public/akkilahdot.html', function (req, response) {
 
     response.write('</tr>');
 
-    let sql = "SELECT time, destination_destination_id FROM schedule WHERE time >= '" + hour + ":" + minute+ "';";
+    let sql = "SELECT time, destination_destination_id FROM schedule WHERE  date = '" + d.getFullYear() + "-" + month + "-" +d.getUTCDate()+ "' AND time >= '" + hour + ":" + minute+ "';";
     (async () => {
         try {
 
