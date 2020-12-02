@@ -55,6 +55,9 @@ var minute = d.getUTCMinutes();
 var month = d.getMonth() +1;
 var akkilahdot = fs.readFileSync(__dirname + '/public/akkilahdot.html', "utf-8");
 var kohteet = fs.readFileSync(__dirname + '/public/kohteet.html', "utf-8");
+var varaus = fs.readFileSync(__dirname + '/public/varaus.html', "utf-8");
+var kohde;
+var lahtoaika;
 
 app.post('/public/akkilahdot.html', function (req, response) {
     response.writeHead(200, {"Content-Type": "text/html"});
@@ -155,10 +158,11 @@ app.get('/public/kohteet.html', function (req, response) {
 
     response.write('</tr>');
 
-    let sql = "SELECT destination_name, country FROM destination;";
+    let sql = "SELECT * FROM destination;";
     (async () => {
         try {
             const rows = await query(sql);
+            console.log(rows);
             Object.keys(rows).forEach(function (key) {
                 var row = rows[key];
                 response.write('<tr>');
@@ -174,7 +178,7 @@ app.get('/public/kohteet.html', function (req, response) {
         }
     })()
     //res.sendFile(path.join(__dirname + '/public/akkilahdot.html'));
-    console.log("Äkkilähdöt ladattu!");
+    console.log("kohteet ladattu!");
 
 });
 
@@ -182,7 +186,54 @@ app.get('/public/ohjeet.html', function (req, res) {
     res.sendFile(path.join(__dirname + '/public/ohjeet.html'));
     console.log("Ohjeet ladattu!");
 
-})
+});
+app.get('/public/haku', function (req, response) {
+
+    response.writeHead(200, {"Content-Type": "text/html"});
+    response.write(varaus);
+    response.write('<table id="lennot"><tr>');
+    response.write('<td><label>Time</label></td>');
+    response.write('<td><label>Destination</label></td>');
+    response.write('<td><label>Country</label></td>');
+
+    response.write('</tr>');
+    let sql = "SELECT destination_id, destination_name, country FROM destination WHERE destination_name = '" + kohde + "';";
+    (async () => {
+        try {
+            let sql2 = [];
+            const rows = await query(sql);
+            Object.keys(rows).forEach(function (key) {
+                var row = rows[key];
+                sql2.push("SELECT * FROM schedule WHERE date='" + lahtoaika + "' AND destination_destination_id = '" + row.destination_id + "';");
+            });
+            for (var i = 0; i < sql2.length; i++) {
+                const rows2 = await query(sql2[i]);
+
+                Object.keys(rows2).forEach(function (key) {
+                    var row = rows2[key];
+                    response.write('<tr>');
+                    response.write('<td><label class="label">' + row.time + '</label></td>');
+                    response.write('<td><label class="label">' + rows[i].destination_name + '</label></td>');
+                    response.write('<td><label class="label">' + rows[i].country + '</label></td>');
+                    response.write('</tr>')
+                });
+            }
+            response.end('</table>')
+
+        }
+        catch (err) {
+            console.log("Database error!"+ err);
+        }
+    })()
+});
+
+app.post('/public/varaus.html', function(req,res){
+    kohde = req.body.kohde;
+    console.log(kohde);
+    lahtoaika = req.body.lahtoaika;
+    console.log(lahtoaika);
+    return res.redirect('/public/haku');
+});
 
 const server = app.listen(8080, function () {
     const host = server.address().address;
