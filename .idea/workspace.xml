@@ -19,8 +19,9 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="77737cd1-010a-4474-9433-e546030cda9b" name="Default Changelist" comment="Kaupungit input-kenttään datalista josta voi valita kaupungin">
+    <list default="true" id="77737cd1-010a-4474-9433-e546030cda9b" name="Default Changelist" comment="Parannuksia">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LennotTietokanta.sql" beforeDir="false" afterPath="$PROJECT_DIR$/LennotTietokanta.sql" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/varaus.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/varaus.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/serveri.js" beforeDir="false" afterPath="$PROJECT_DIR$/serveri.js" afterDir="false" />
     </list>
@@ -124,7 +125,8 @@
       <workItem from="1606812494321" duration="3801000" />
       <workItem from="1606819577616" duration="661000" />
       <workItem from="1606893678380" duration="5864000" />
-      <workItem from="1606905506358" duration="856000" />
+      <workItem from="1606905506358" duration="1096000" />
+      <workItem from="1606933268321" duration="2227000" />
     </task>
     <task id="LOCAL−00001" summary="Test">
       <created>1605858778523</created>
@@ -240,7 +242,13 @@
       <option name="presentableId" value="LOCAL−00019" />
       <updated>1606815714352</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL−00020" summary="Parannuksia">
+      <created>1606906601025</created>
+      <option name="number" value="LOCAL−00020" />
+      <option name="presentableId" value="LOCAL−00020" />
+      <updated>1606906601025</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -274,7 +282,8 @@
     <MESSAGE value="Tietokannan päivitys" />
     <MESSAGE value="Kaikki kohteet listattu tauluun. Serveri.js koodin siistimistä" />
     <MESSAGE value="Kaupungit input-kenttään datalista josta voi valita kaupungin" />
-    <option name="LAST_COMMIT_MESSAGE" value="Kaupungit input-kenttään datalista josta voi valita kaupungin" />
+    <MESSAGE value="Parannuksia" />
+    <option name="LAST_COMMIT_MESSAGE" value="Parannuksia" />
   </component>
   <component name="WindowStateProjectService">
     <state x="223" y="67" width="1089" height="737" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1606336490817">
@@ -309,11 +318,11 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="1515" height="210" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1606338352236" />
-    <state x="451" y="183" key="Vcs.Push.Dialog.v2" timestamp="1606815720669">
+    <state x="451" y="183" key="Vcs.Push.Dialog.v2" timestamp="1606906604567">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="361" y="145" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1606335501436" />
-    <state x="451" y="183" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1606815720669" />
+    <state x="451" y="183" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1606906604567" />
     <state x="546" y="146" key="com.intellij.openapi.vcs.changes.SpecificFilesViewDialog" timestamp="1605860517474">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -323,9 +332,9 @@
     </state>
     <state x="586" y="326" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1536.824@0.0.1536.824" timestamp="1606333512096" />
     <state x="733" y="411" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1920.1040@0.0.1920.1040" timestamp="1606815170038" />
-    <state x="1011" y="251" key="run.anything.popup" timestamp="1606901836294">
+    <state x="1011" y="251" key="run.anything.popup" timestamp="1606933824219">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="1011" y="251" key="run.anything.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1606901836294" />
+    <state x="1011" y="251" key="run.anything.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1606933824219" />
   </component>
 </project>

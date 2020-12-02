@@ -20,7 +20,7 @@
 <h1>Varaa Lento</h1>
 <p id="kohde">Kohde</p>
 <form action="/public/varaus.html" method="POST">
-<input list="kaupungit" id="input1" name="kohde">
+<input list="kaupungit" id="input1" name="kohde" placeholder="Kaupunki">
 <datalist id="kaupungit" type="text" placeholder="Kaupunki">
     <option value="Amsterdam">
     <option value="Berliini">
@@ -35,7 +35,7 @@
 <p id="lahto">Lähtöpäivä</p>
 <input id="input2" type="date" placeholder="Lähtöaika" name="lahtoaika">
 <p id="paikat">Paikkoja</p>
-<input id="input3" type="number" placeholder="Montako paikkaa varataan?" min="1" max="10">
+<input id="input3" type="number" name="maara" placeholder="Montako paikkaa varataan?" min="1" max="10">
 <input id="hae" type="submit" value="Hae">
 </form>
 </body>

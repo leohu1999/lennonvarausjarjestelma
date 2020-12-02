@@ -17,7 +17,7 @@ USE `flights` ;
 -- -----------------------------------------------------
 -- Table `flights`.`destination`
 -- -----------------------------------------------------
-DROP TABLE destination;
+
 CREATE TABLE IF NOT EXISTS `flights`.`destination` (
   `destination_id` INT NOT NULL AUTO_INCREMENT,
   `destination_name` VARCHAR(45) NULL,
@@ -30,12 +30,13 @@ ENGINE = InnoDB;
 -- -----------------------------------------------------
 -- Table `flights`.`schedule`
 -- -----------------------------------------------------
-DROP TABLE schedule;
+
 CREATE TABLE IF NOT EXISTS `flights`.`schedule` (
   `schedule_id` INT NOT NULL AUTO_INCREMENT,
   `date` DATE NOT NULL,
   `time` TIME NOT NULL,
   `destination_destination_id` INT NOT NULL,
+  `seats` INT DEFAULT 4,
   PRIMARY KEY (`schedule_id`),
   INDEX `fk_schedule_destionation1_idx` (`destination_destination_id` ASC),
   CONSTRAINT `fk_schedulet_destination1`
