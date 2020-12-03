@@ -48,12 +48,7 @@ app.get('/public/omat.html', function (req, res) {
     console.log("Omat varaukset ladattu!");
 
 });
-app.get('/public/varausvahvistus.html', function (req, res) {
-    res.sendFile(path.join(__dirname + '/public/varausvahvistus.html'));
-    console.log("Varausvahvistus ladattu!");
-
-});
-//Päivämäärä muuttujat joilla haetaan kellon aika jolloin käyttäjä menee sivulle. Lisäksi html-sivujen tiedostojen haku muuttujat
+var varausvahvistus = fs.readFileSync(__dirname + '/public/varausvahvistus.html', "utf-8");
 var d = new Date();
 var hour = d.getUTCHours() +2;
 var minute = d.getUTCMinutes();
@@ -64,6 +59,17 @@ var varaus = fs.readFileSync(__dirname + '/public/varaus.html', "utf-8");
 var kohde;
 var lahtoaika;
 var maara;
+
+app.get('/public/varausvahvistus.html', function (req, response) {
+    response.writeHead(200, {"Content-Type": "text/html"});
+    response.write(varausvahvistus);
+    response.write('<p>'+kohde+'<p>');
+
+    //res.sendFile(path.join(__dirname + '/public/varausvahvistus.html'));
+    console.log("Varausvahvistus ladattu!");
+
+});
+//Päivämäärä muuttujat joilla haetaan kellon aika jolloin käyttäjä menee sivulle. Lisäksi html-sivujen tiedostojen haku muuttujat
 
 app.post('/public/akkilahdot.html', function (req, response) {
     response.writeHead(200, {"Content-Type": "text/html"});
