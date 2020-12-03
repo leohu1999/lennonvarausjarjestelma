@@ -26,6 +26,19 @@ CREATE TABLE IF NOT EXISTS `flights`.`destination` (
   INDEX `nameIndex` (`destination_name` ASC))
 ENGINE = InnoDB;
 
+-- -----------------------------------------------------
+-- Table `flights`.`reservations`
+-- -----------------------------------------------------
+
+CREATE TABLE IF NOT EXISTS `flights`.`reservations` (
+  `time` TIME NOT NULL,
+  `date` DATE NOT NULL,
+  `destination_name` VARCHAR(45) NULL,
+  `country` VARCHAR(30) NULL,
+  `seats` INT,
+  PRIMARY KEY (`destination_name`)
+ENGINE = InnoDB;
+
 
 -- -----------------------------------------------------
 -- Table `flights`.`schedule`

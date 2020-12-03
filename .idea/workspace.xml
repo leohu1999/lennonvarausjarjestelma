@@ -19,7 +19,10 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="77737cd1-010a-4474-9433-e546030cda9b" name="Default Changelist" comment="Parannuksia" />
+    <list default="true" id="77737cd1-010a-4474-9433-e546030cda9b" name="Default Changelist" comment="tietokanta muutos">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LennotTietokanta.sql" beforeDir="false" afterPath="$PROJECT_DIR$/LennotTietokanta.sql" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -64,6 +67,7 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Teemu\lennonvarausjarjestelma" />
       <recent name="C:\Users\Teemu\lennonvarausjarjestelma\img" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
@@ -279,11 +283,11 @@
       <option name="presentableId" value="LOCAL−00026" />
       <updated>1606988406317</updated>
     </task>
-    <task id="LOCAL−00027" summary="Parannuksia">
-      <created>1606990523395</created>
+    <task id="LOCAL−00027" summary="tietokanta muutos">
+      <created>1606990304744</created>
       <option name="number" value="LOCAL−00027" />
       <option name="presentableId" value="LOCAL−00027" />
-      <updated>1606990523395</updated>
+      <updated>1606990304744</updated>
     </task>
     <option name="localTasksCounter" value="28" />
     <servers />
@@ -320,21 +324,12 @@
     <MESSAGE value="Kaikki kohteet listattu tauluun. Serveri.js koodin siistimistä" />
     <MESSAGE value="Kaupungit input-kenttään datalista josta voi valita kaupungin" />
     <MESSAGE value="varausvahvistus.html muutoksia" />
+    <MESSAGE value="Parannuksia" />
     <MESSAGE value="äkkilähdöt muutos" />
     <MESSAGE value="kuvan responsiivisuus" />
     <MESSAGE value="css muutoksia" />
     <MESSAGE value="button muutoksia" />
-    <MESSAGE value="Parannuksia" />
-    <option name="LAST_COMMIT_MESSAGE" value="Parannuksia" />
-  </component>
-  <component name="WindowStateProjectService">
-    <state x="598" y="281" key="MultipleFileMergeDialog" timestamp="1606990348011">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="598" y="281" key="MultipleFileMergeDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1606990348011" />
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1606990528559">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1606990528559" />
+    <MESSAGE value="tietokanta muutos" />
+    <option name="LAST_COMMIT_MESSAGE" value="tietokanta muutos" />
   </component>
 </project>
