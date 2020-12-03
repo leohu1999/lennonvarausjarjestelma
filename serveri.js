@@ -47,12 +47,12 @@ app.get('/public/omat.html', function (req, res) {
     res.sendFile(path.join(__dirname + '/public/omat.html'));
     console.log("Omat varaukset ladattu!");
 
-})
+});
 app.get('/public/varausvahvistus.html', function (req, res) {
     res.sendFile(path.join(__dirname + '/public/varausvahvistus.html'));
     console.log("Varausvahvistus ladattu!");
 
-})
+});
 //Päivämäärä muuttujat joilla haetaan kellon aika jolloin käyttäjä menee sivulle. Lisäksi html-sivujen tiedostojen haku muuttujat
 var d = new Date();
 var hour = d.getUTCHours() +2;
