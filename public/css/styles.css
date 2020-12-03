@@ -163,6 +163,21 @@ h3 {
     margin-top: 30px;
     margin-bottom: 30px;
 }
+#vahvista{
+    position: relative;
+    font-family: Goldman-Bold;
+    font-size: larger;
+    color: white;
+    background: #4682B4;
+    top: 300px;
+}
+#vahvistustekstit{
+    text-align: center;
+    color: #0000FF;
+    font-family: Goldman-Regular;
+    padding-top: 20px;
+    font-size: larger;
+}
 @font-face {
     font-family: Goldman-Bold;
     src: url(../fonts/Goldman-Bold.ttf);
