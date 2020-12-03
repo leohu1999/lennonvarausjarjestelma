@@ -179,9 +179,13 @@ h3 {
     padding: 8px;
 }
 
-#lennot tr:nth-child(even){background-color: lightskyblue;}
+#lennot tr:nth-child(even){
+    background-color: lightskyblue;
+}
 
-#lennot tr:hover {background-color: cadetblue;}
+#lennot tr:hover {
+    background-color: cadetblue;
+}
 
 #lennot th {
     padding-top: 12px;
