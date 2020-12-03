@@ -36,8 +36,8 @@ CREATE TABLE IF NOT EXISTS `flights`.`reservations` (
   `destination_name` VARCHAR(45) NULL,
   `country` VARCHAR(30) NULL,
   `seats` INT,
-  PRIMARY KEY (`destination_name`))
-ENGINE = InnoDB;
+  PRIMARY KEY (`destination_name`)
+  );
 
 
 -- -----------------------------------------------------
