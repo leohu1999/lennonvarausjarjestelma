@@ -137,7 +137,7 @@ app.get('/public/akkilahdot.html', function (req, response) {
                 const rows2 = await query(sql1[i]);
                 Object.keys(rows2).forEach(function (key) {
                     var row = rows2[key];
-                    response.write('<tr>');
+                    response.write('<tr onclick="myFunction(this)">');
                     response.write('<td><label class="label">' + rows[i].time + '</label></td>');
                     response.write('<td><label class="label">' + row.destination_name+ '</label></td>');
                     response.write('<td><label class="label">' + row.country+ '</label></td>');

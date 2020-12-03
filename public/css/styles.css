@@ -80,13 +80,16 @@ h3 {
     font-size: larger;
     color: #0000FF;
 }
+.keskitä{
+    text-align: center;
+}
 #hae{
     position: relative;
     font-family: Goldman-Bold;
     font-size: larger;
     width: 254px;
     height: 50px;
-    left: 820px;
+    left: 180px;
     bottom: 160px;
     color: white;
     background: #4682B4;
