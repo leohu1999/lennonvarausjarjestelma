@@ -247,7 +247,13 @@
       <option name="presentableId" value="LOCAL−00020" />
       <updated>1606906601025</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL−00021" summary="Parannuksia">
+      <created>1606982187407</created>
+      <option name="number" value="LOCAL−00021" />
+      <option name="presentableId" value="LOCAL−00021" />
+      <updated>1606982187407</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -283,5 +289,11 @@
     <MESSAGE value="Kaupungit input-kenttään datalista josta voi valita kaupungin" />
     <MESSAGE value="Parannuksia" />
     <option name="LAST_COMMIT_MESSAGE" value="Parannuksia" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1606982191708">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1606982191708" />
   </component>
 </project>
