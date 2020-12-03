@@ -37,7 +37,7 @@ CREATE TABLE IF NOT EXISTS `flights`.`reservations` (
   `country` VARCHAR(30) NULL,
   `seats` INT,
   PRIMARY KEY (`destination_name`)
-ENGINE = InnoDB;
+  );
 
 
 -- -----------------------------------------------------
