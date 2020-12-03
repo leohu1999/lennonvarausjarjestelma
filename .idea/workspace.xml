@@ -19,8 +19,9 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="77737cd1-010a-4474-9433-e546030cda9b" name="Default Changelist" comment="button muutoksia">
+    <list default="true" id="77737cd1-010a-4474-9433-e546030cda9b" name="Default Changelist" comment="tietokanta muutos">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LennotTietokanta.sql" beforeDir="false" afterPath="$PROJECT_DIR$/LennotTietokanta.sql" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -66,6 +67,7 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Teemu\lennonvarausjarjestelma" />
       <recent name="C:\Users\Teemu\lennonvarausjarjestelma\img" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
@@ -281,7 +283,13 @@
       <option name="presentableId" value="LOCAL−00026" />
       <updated>1606988406317</updated>
     </task>
-    <option name="localTasksCounter" value="27" />
+    <task id="LOCAL−00027" summary="tietokanta muutos">
+      <created>1606990304744</created>
+      <option name="number" value="LOCAL−00027" />
+      <option name="presentableId" value="LOCAL−00027" />
+      <updated>1606990304744</updated>
+    </task>
+    <option name="localTasksCounter" value="28" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -321,6 +329,7 @@
     <MESSAGE value="kuvan responsiivisuus" />
     <MESSAGE value="css muutoksia" />
     <MESSAGE value="button muutoksia" />
-    <option name="LAST_COMMIT_MESSAGE" value="button muutoksia" />
+    <MESSAGE value="tietokanta muutos" />
+    <option name="LAST_COMMIT_MESSAGE" value="tietokanta muutos" />
   </component>
 </project>
