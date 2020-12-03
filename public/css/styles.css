@@ -103,6 +103,9 @@ h3 {
     object-fit: cover;
     margin: 0;
     padding: 0;
+    width: 100%;
+    height: auto;
+    max-height: 200px;
 }
 #input1 {
     position: relative;
@@ -194,7 +197,7 @@ h3 {
     padding-top: 12px;
     padding-bottom: 12px;
     text-align: left;
-    background-color: #4CAF50;
+    background-color: #4caf50;
     color: white;
 }
 button {
