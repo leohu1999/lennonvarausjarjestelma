@@ -244,6 +244,12 @@ app.get('/public/haku', function (req, response) {
         }
     })()
 });
+app.post('/public/haku', function(req,res){
+
+        console.log(this.cells[0].innerHTML);
+
+
+});
 
 app.post('/public/varaus.html', function(req,res){
     kohde = req.body.kohde;
