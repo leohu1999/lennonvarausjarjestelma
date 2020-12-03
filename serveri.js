@@ -208,7 +208,7 @@ app.get('/public/haku', function (req, response) {
             for (var i = 0; i < sql2.length; i++) {
                 const rows2 = await query(sql2[i]);
                 if (rows2 === undefined || rows2.length == 0) {
-                    response.write('<p>Valitsemallanne hakuehdoilla ei löytynyt yhtään lentoa</p>');
+                    response.write('<p id="etusivup">Valitsemallanne hakuehdoilla ei löytynyt yhtään lentoa</p>');
                 } else {
                     response.write('<table id="lennot"><tr>');
                     response.write('<td><label>Time</label></td>');
