@@ -21,7 +21,6 @@
   <component name="ChangeListManager">
     <list default="true" id="77737cd1-010a-4474-9433-e546030cda9b" name="Default Changelist" comment="Korjauksia">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/muokkaus.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/muokkaus.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/omat.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/omat.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/serveri.js" beforeDir="false" afterPath="$PROJECT_DIR$/serveri.js" afterDir="false" />
     </list>
@@ -398,7 +397,13 @@
       <option name="presentableId" value="LOCAL−00044" />
       <updated>1607083805274</updated>
     </task>
-    <option name="localTasksCounter" value="45" />
+    <task id="LOCAL−00045" summary="Korjauksia">
+      <created>1607084636355</created>
+      <option name="number" value="LOCAL−00045" />
+      <option name="presentableId" value="LOCAL−00045" />
+      <updated>1607084636355</updated>
+    </task>
+    <option name="localTasksCounter" value="46" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -456,10 +461,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="598" y="281" key="MultipleFileMergeDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1607083814765" />
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1607083820203">
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1607084640847">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1607083820203" />
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1607084640847" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

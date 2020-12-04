@@ -54,6 +54,7 @@ app.get('/public/omat.html', function (req, response) {
     response.writeHead(200, {"Content-Type": "text/html"});
     response.write(omat);
     response.write('<table id="lennot"><tr>');
+    response.write('<td><label>Id</label></td>');
     response.write('<td><label>Aika</label></td>');
     response.write('<td><label>Päivämäärä</label></td>');
     response.write('<td><label>Kohde</label></td>');
@@ -72,12 +73,12 @@ app.get('/public/omat.html', function (req, response) {
                     var row = rows[key];
 
                     response.write('<tr onclick="remove(this)">');
+                    response.write('<td>' + row.reservation_id + '</td>');
                     response.write('<td>' + row.time + '</td>');
                     response.write('<td>' + row.date+ '</td>');
                     response.write('<td>' + row.destination_name+ '</td>');
                     response.write('<td>' + row.country+ '</td>');
                     response.write('<td>' + row.seats + '</td>');
-                    response.write('<td>' + row.reservations_id + '</td>');
                     response.write('<td><button class="omatbuttons">Muokkaa/Poista</button></td>');
                     response.write('</tr>')
             });
