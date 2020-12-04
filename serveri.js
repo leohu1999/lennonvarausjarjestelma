@@ -161,7 +161,7 @@ app.post('/public/akkilahdot.html', function (req, response) {
 });
 app.post('/public/varausvahvistus.html', function (req, response) {
 
-    let sql = "INSERT INTO reservations VALUES ('08:00','2020-12-03','Tokio','Japani','" + maara + "')";
+    let sql = "INSERT INTO reservations (time,date,destination_name,country,seats) VALUES ('08:00','2020-12-03','Tokio','Japani','" + maara + "')";
     console.log(sql);
     (async () => {
         try {
