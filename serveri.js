@@ -119,6 +119,24 @@ app.post('/public/akkilahdot.html', function (req, response) {
     console.log("Äkkilähdöt ladattu!");
 
 });
+app.post('/public/varausvahvistus.html', function (req, response) {
+
+    let sql = "INSERT INTO reservations VALUES ( )";
+    console.log(sql);
+    (async () => {
+        try {
+
+            let sql1 = [];
+            const rows = await query(sql);
+            let string = JSON.stringify(rows);
+        }
+        catch (err) {
+            console.log("Database error!"+ err);
+        }
+    })()
+    console.log("Varaus vahvistettu!");
+
+});
 
 app.get('/public/akkilahdot.html', function (req, response) {
     response.writeHead(200, {"Content-Type": "text/html"});
