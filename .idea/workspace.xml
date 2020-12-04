@@ -19,9 +19,7 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="77737cd1-010a-4474-9433-e546030cda9b" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/LennotTietokanta.sql" beforeDir="false" afterPath="$PROJECT_DIR$/LennotTietokanta.sql" afterDir="false" />
+    <list default="true" id="77737cd1-010a-4474-9433-e546030cda9b" name="Default Changelist" comment="SQL muutoksia">
       <change beforePath="$PROJECT_DIR$/serveri.js" beforeDir="false" afterPath="$PROJECT_DIR$/serveri.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -131,7 +129,7 @@
       <workItem from="1606993085297" duration="3898000" />
       <workItem from="1607004398333" duration="2385000" />
       <workItem from="1607072821562" duration="1112000" />
-      <workItem from="1607074696699" duration="506000" />
+      <workItem from="1607074696699" duration="795000" />
     </task>
     <task id="LOCAL−00001" summary="Test">
       <created>1605858778523</created>
@@ -343,7 +341,13 @@
       <option name="presentableId" value="LOCAL−00035" />
       <updated>1607072769224</updated>
     </task>
-    <option name="localTasksCounter" value="36" />
+    <task id="LOCAL−00036" summary="SQL muutoksia">
+      <created>1607075218831</created>
+      <option name="number" value="LOCAL−00036" />
+      <option name="presentableId" value="LOCAL−00036" />
+      <updated>1607075218831</updated>
+    </task>
+    <option name="localTasksCounter" value="37" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -365,7 +369,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Test" />
     <MESSAGE value="Testi" />
     <MESSAGE value="Homepage" />
     <MESSAGE value="yes" />
@@ -390,7 +393,8 @@
     <MESSAGE value="Parannuksia" />
     <MESSAGE value="Muutoksia" />
     <MESSAGE value="Omat varaukset.html" />
-    <option name="LAST_COMMIT_MESSAGE" value="Omat varaukset.html" />
+    <MESSAGE value="SQL muutoksia" />
+    <option name="LAST_COMMIT_MESSAGE" value="SQL muutoksia" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
