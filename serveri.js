@@ -63,9 +63,10 @@ app.get('/public/omat.html', function (req, response) {
 
             let sql1 = [];
             const rows = await query(sql);
-
+            console.log(rows);
             Object.keys(rows).forEach(function (key) {
                     var row = rows[key];
+
                     response.write('<tr>');
                     response.write('<td><label class="label">' + row.time + '</label></td>');
                     response.write('<td><label class="label">' + row.date+ '</label></td>');
