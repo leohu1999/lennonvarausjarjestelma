@@ -21,7 +21,7 @@
   <component name="ChangeListManager">
     <list default="true" id="77737cd1-010a-4474-9433-e546030cda9b" name="Default Changelist" comment="ohjeet muutoksia">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/akkilahdot.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/akkilahdot.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/serveri.js" beforeDir="false" afterPath="$PROJECT_DIR$/serveri.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -327,7 +327,13 @@
       <option name="presentableId" value="LOCAL−00033" />
       <updated>1607071012101</updated>
     </task>
-    <option name="localTasksCounter" value="34" />
+    <task id="LOCAL−00034" summary="Muutoksia">
+      <created>1607071870767</created>
+      <option name="number" value="LOCAL−00034" />
+      <option name="presentableId" value="LOCAL−00034" />
+      <updated>1607071870767</updated>
+    </task>
+    <option name="localTasksCounter" value="35" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -369,6 +375,7 @@
     <MESSAGE value="tietokanta muutos" />
     <MESSAGE value="post varausvahvistukselle muutoksia" />
     <MESSAGE value="Parannuksia" />
-    <option name="LAST_COMMIT_MESSAGE" value="Parannuksia" />
+    <MESSAGE value="Muutoksia" />
+    <option name="LAST_COMMIT_MESSAGE" value="Muutoksia" />
   </component>
 </project>
