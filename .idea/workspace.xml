@@ -19,7 +19,7 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="77737cd1-010a-4474-9433-e546030cda9b" name="Default Changelist" comment="ohjeet muutoksia">
+    <list default="true" id="77737cd1-010a-4474-9433-e546030cda9b" name="Default Changelist" comment="Parannuksia">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/serveri.js" beforeDir="false" afterPath="$PROJECT_DIR$/serveri.js" afterDir="false" />
     </list>
@@ -333,7 +333,13 @@
       <option name="presentableId" value="LOCAL−00034" />
       <updated>1607071870767</updated>
     </task>
-    <option name="localTasksCounter" value="35" />
+    <task id="LOCAL−00035" summary="Parannuksia">
+      <created>1607072985638</created>
+      <option name="number" value="LOCAL−00035" />
+      <option name="presentableId" value="LOCAL−00035" />
+      <updated>1607072985638</updated>
+    </task>
+    <option name="localTasksCounter" value="36" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -374,8 +380,14 @@
     <MESSAGE value="button muutoksia" />
     <MESSAGE value="tietokanta muutos" />
     <MESSAGE value="post varausvahvistukselle muutoksia" />
-    <MESSAGE value="Parannuksia" />
     <MESSAGE value="Muutoksia" />
-    <option name="LAST_COMMIT_MESSAGE" value="Muutoksia" />
+    <MESSAGE value="Parannuksia" />
+    <option name="LAST_COMMIT_MESSAGE" value="Parannuksia" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1607072988896">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1607072988896" />
   </component>
 </project>

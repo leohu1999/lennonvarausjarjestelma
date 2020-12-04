@@ -101,6 +101,8 @@ var maara;
 app.get('/public/varausvahvistus.html', function (req, response) {
     response.writeHead(200, {"Content-Type": "text/html"});
     response.write(varausvahvistus);
+    response.end();
+
     //res.sendFile(path.join(__dirname + '/public/varausvahvistus.html'));
     console.log("Varausvahvistus ladattu!");
 
@@ -156,7 +158,7 @@ app.post('/public/akkilahdot.html', function (req, response) {
 });
 app.post('/public/varausvahvistus.html', function (req, response) {
 
-    let sql = "INSERT INTO reservations VALUES ( )";
+    let sql = "INSERT INTO reservations VALUES ('08:00','2020-12-03','Tokio','Japani','" + maara + "')";
     console.log(sql);
     (async () => {
         try {
