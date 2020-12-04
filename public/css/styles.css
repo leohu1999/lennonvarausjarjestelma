@@ -175,11 +175,14 @@ h3 {
 
 }
 .ohjeetp{
-    text-align: center;
+    text-align: justify;
     font-family: Goldman-Regular;
     color: #0000FF;
     margin-top: 30px;
     margin-bottom: 30px;
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
 }
 #vahvista{
     position: relative;
@@ -202,6 +205,15 @@ h3 {
     font-family: Goldman-Regular;
     padding-top: 20px;
     font-size: larger;
+}
+#vahvistustekstit4{
+    position: relative;
+    bottom: 41px;
+    left: 90px;
+}
+#varatutpaikat{
+    position: relative;
+    right: 40px;
 }
 @font-face {
     font-family: Goldman-Bold;
