@@ -25,11 +25,12 @@
         <p class="input" id="vahvistustekstit1"></p>
         <p class="input" id="vahvistustekstit2"><p>
         <p class="input" id="vahvistustekstit3"><p>
-        <p id="varatutpaikat" class="input">Varattuja paikkoja:</p><input id="vahvistustekstit4" type="number" name="maara" min="1" max="10">
-        <input class="piilotus" id="vahvistustekstit5" name="aika">
-        <input class="piilotus" id="vahvistustekstit7" name="kohde">
-        <input class="piilotus" id="vahvistustekstit6" name="lahtopaiva">
-        <input class="piilotus" id="vahvistustekstit8" name="maa">
+        <p id="varatutpaikat" class="input">Varattuja paikkoja:</p><input id="vahvistustekstit4" type="number" name="varausPaikat" min="1" max="10">
+        <input class="piilotus" id="vahvistustekstit5" name="varausAika">
+        <input class="piilotus" id="vahvistustekstit7" name="varausKohde">
+        <input class="piilotus" id="vahvistustekstit6" name="varausLahtopaiva">
+        <input class="piilotus" id="vahvistustekstit8" name="varausMaa">
+        <input class="piilotus" id="vahvistustekstit9" name="id">
     </div>
 </form>
 <script>
@@ -41,6 +42,7 @@
     document.getElementById("vahvistustekstit6").value = localStorage.getItem("varausLahtopaiva");
     document.getElementById("vahvistustekstit7").value = localStorage.getItem("varausKohde");
     document.getElementById("vahvistustekstit8").value = localStorage.getItem("varausMaa");
+    document.getElementById("vahvistustekstit9").value = localStorage.getItem("id");
 </script>
 </body>
 </html>

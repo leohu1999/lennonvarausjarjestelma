@@ -20,6 +20,7 @@
 <h1>Omat Varaukset</h1>
 <script>
     function remove(x) {
+        localStorage.setItem("id", x.cells[5].innerHTM);
         localStorage.setItem("varausAika", x.cells[0].innerHTML);
         localStorage.setItem("varausLahtopaiva", x.cells[1].innerHTML);
         localStorage.setItem("varausKohde", x.cells[2].innerHTML);

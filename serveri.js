@@ -61,7 +61,7 @@ app.get('/public/omat.html', function (req, response) {
     response.write('<td><label>Varatut Paikat</label></td>');
     response.write('</tr>');
 
-    let sql = "SELECT time,date,destination_name,country,seats FROM reservations;";
+    let sql = "SELECT time,date,destination_name,country,seats, reservation_id FROM reservations;";
     (async () => {
         try {
 
@@ -77,6 +77,7 @@ app.get('/public/omat.html', function (req, response) {
                     response.write('<td>' + row.destination_name+ '</td>');
                     response.write('<td>' + row.country+ '</td>');
                     response.write('<td>' + row.seats + '</td>');
+                    response.write('<td>' + row.reservations_id + '</td>');
                     response.write('<td><button class="omatbuttons">Muokkaa/Poista</button></td>');
                     response.write('</tr>')
             });
