@@ -121,7 +121,7 @@ app.post('/public/akkilahdot.html', function (req, response) {
 });
 app.post('/public/varausvahvistus.html', function (req, response) {
 
-    let sql = "INSERT INTO reservations VALUES ( )";
+    let sql = "INSERT INTO reservations VALUES ()";
     console.log(sql);
     (async () => {
         try {
@@ -129,12 +129,15 @@ app.post('/public/varausvahvistus.html', function (req, response) {
             let sql1 = [];
             const rows = await query(sql);
             let string = JSON.stringify(rows);
+            response.write('<p id="vahvistustekstit">Varauksen vahvistus onnistui!<p>');
+            console.log("Varaus vahvistettu!");
         }
         catch (err) {
             console.log("Database error!"+ err);
+            response.write('<p id="vahvistustekstit">Varauksen vahvistus epäonnistui!<p>');
+            console.log("Varausta ei vahvistettu!");
         }
     })()
-    console.log("Varaus vahvistettu!");
 
 });
 
