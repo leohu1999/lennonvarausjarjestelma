@@ -45,7 +45,7 @@ app.get('/public/varaus.html', function (req, res) {
 
 })
 
-app.get('/public/omat.html', function (req, res) {
+app.get('/public/omat.html', function (req, response) {
 
     response.writeHead(200, {"Content-Type": "text/html"});
     response.write(omat);
@@ -63,25 +63,18 @@ app.get('/public/omat.html', function (req, res) {
 
             let sql1 = [];
             const rows = await query(sql);
+
             Object.keys(rows).forEach(function (key) {
-                var row = rows[key];
-                sql1.push("SELECT * FROM destination WHERE destination_id='" + row.destination_destination_id + "';");
-
-            });
-
-            for (var i = 0; i < sql1.length; i++) {
-                const rows2 = await query(sql1[i]);
-                Object.keys(rows2).forEach(function (key) {
-                    var row = rows2[key];
+                    var row = rows[key];
                     response.write('<tr>');
-                    response.write('<td><label class="label">' + rows[i].time + '</label></td>');
+                    response.write('<td><label class="label">' + row.time + '</label></td>');
                     response.write('<td><label class="label">' + row.date+ '</label></td>');
                     response.write('<td><label class="label">' + row.destination_name+ '</label></td>');
                     response.write('<td><label class="label">' + row.country+ '</label></td>');
-                    response.write('<td><label class="label">' + rows[i].seats + '</label></td>');
+                    response.write('<td><label class="label">' + row.seats + '</label></td>');
                     response.write('</tr>')
-                });
-            }
+            });
+
             response.end('</table>')
         }
         catch (err) {
