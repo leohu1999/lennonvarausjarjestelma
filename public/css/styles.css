@@ -156,6 +156,24 @@ h3 {
     padding-top: 20px;
 
 }
+#ohjeetlahdot{
+    position: relative;
+    right: 300px;
+    font-size: larger;
+    font-family: Goldman-Bold;
+    color: #0000FF;
+    padding-top: 20px;
+
+}
+#ohjeetkohteet{
+    position: relative;
+    right: 280px;
+    font-size: larger;
+    font-family: Goldman-Bold;
+    color: #0000FF;
+    padding-top: 20px;
+
+}
 .ohjeetp{
     text-align: center;
     font-family: Goldman-Regular;
