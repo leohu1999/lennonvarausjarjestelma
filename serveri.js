@@ -56,6 +56,7 @@ var month = d.getMonth() +1;
 var akkilahdot = fs.readFileSync(__dirname + '/public/akkilahdot.html', "utf-8");
 var kohteet = fs.readFileSync(__dirname + '/public/kohteet.html', "utf-8");
 var varaus = fs.readFileSync(__dirname + '/public/varaus.html', "utf-8");
+var varausvahvistus = fs.readFileSync(__dirname + '/public/varausvahvistus.html',"utf-8");
 var kohde;
 var lahtoaika;
 var maara;
@@ -118,6 +119,9 @@ app.post('/public/akkilahdot.html', function (req, response) {
 });
 app.post('/public/varausvahvistus.html', function (req, response) {
 
+    response.writeHead(200, {"Content-Type": "text/html"});
+    response.write(varausvahvistus);
+
     let sql = "INSERT INTO reservations VALUES ()";
     console.log(sql);
     (async () => {
@@ -132,6 +136,7 @@ app.post('/public/varausvahvistus.html', function (req, response) {
         catch (err) {
             console.log("Database error!"+ err);
             response.write('<p id="vahvistustekstit">Varauksen vahvistus epäonnistui!<p>');
+            response.write('<p id="vahvistustekstit">Yritä varausta uudelleen<p>');
             console.log("Varausta ei vahvistettu!");
         }
     })()
