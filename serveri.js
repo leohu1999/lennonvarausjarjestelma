@@ -88,7 +88,6 @@ app.get('/public/omat.html', function (req, response) {
 
 });
 
-var varausvahvistus = fs.readFileSync(__dirname + '/public/varausvahvistus.html', "utf-8");
 var d = new Date();
 var hour = d.getUTCHours() +2;
 var minute = d.getUTCMinutes();
@@ -161,6 +160,9 @@ app.post('/public/akkilahdot.html', function (req, response) {
 });
 app.post('/public/varausvahvistus.html', function (req, response) {
 
+    response.writeHead(200, {"Content-Type": "text/html"});
+    response.write(varausvahvistus);
+
     let sql = "INSERT INTO reservations (time,date,destination_name,country,seats) VALUES ('" + req.body.aika + "','" + req.body.lahtopaiva + "','" + req.body.kohde + "','" + req.body.maa + "','" + req.body.maara + "')";
     console.log(sql);
     (async () => {
@@ -169,12 +171,15 @@ app.post('/public/varausvahvistus.html', function (req, response) {
             let sql1 = [];
             const rows = await query(sql);
             let string = JSON.stringify(rows);
+            console.log("Varaus vahvistettu!");
+            response.write('<p id="vahvistustekstit">Varauksen vahvistus onnistui!</p>');
         }
         catch (err) {
             console.log("Database error!"+ err);
+            console.log("Varausta ei vahvistettu!");
+            response.write('<p id="vahvistustekstit">Varauksen vahvistus epäonnistui!</p>');
         }
     })()
-    console.log("Varaus vahvistettu!");
 
 });
 
