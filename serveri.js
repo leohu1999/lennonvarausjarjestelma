@@ -58,7 +58,7 @@ app.get('/public/omat.html', function (req, response) {
     response.writeHead(200, {"Content-Type": "text/html"});
     response.write(omat);
     response.write('<table id="lennot"><tr>');
-    response.write('<td><label>Id</label></td>');
+    response.write('<td><label>ID</label></td>');
     response.write('<td><label>Aika</label></td>');
     response.write('<td><label>Päivämäärä</label></td>');
     response.write('<td><label>Kohde</label></td>');

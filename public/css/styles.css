@@ -235,6 +235,11 @@ h3 {
     bottom: 41px;
     left: 430px;
 }
+#vahvistusteksti5{
+    position: relative;
+    bottom: 41px;
+    left: 510px;
+}
 #varatutpaikat{
     position: relative;
     right: 40px;
