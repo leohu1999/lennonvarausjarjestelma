@@ -127,7 +127,7 @@
       <workItem from="1606905506358" duration="1096000" />
       <workItem from="1606933268321" duration="2227000" />
       <workItem from="1606993085297" duration="3898000" />
-      <workItem from="1607004398333" duration="1603000" />
+      <workItem from="1607004398333" duration="1905000" />
     </task>
     <task id="LOCAL−00001" summary="Test">
       <created>1605858778523</created>
@@ -303,7 +303,13 @@
       <option name="presentableId" value="LOCAL−00029" />
       <updated>1607065466839</updated>
     </task>
-    <option name="localTasksCounter" value="30" />
+    <task id="LOCAL−00030" summary="Parannuksia">
+      <created>1607065960714</created>
+      <option name="number" value="LOCAL−00030" />
+      <option name="presentableId" value="LOCAL−00030" />
+      <updated>1607065960714</updated>
+    </task>
+    <option name="localTasksCounter" value="31" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -355,9 +361,9 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="598" y="281" key="MultipleFileMergeDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1606991122581" />
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1607065470034">
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1607065966223">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1607065470034" />
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1607065966223" />
   </component>
 </project>

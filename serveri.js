@@ -76,12 +76,13 @@ app.post('/public/akkilahdot.html', function (req, response) {
     response.writeHead(200, {"Content-Type": "text/html"});
     response.write(akkilahdot);
     response.write('<table id="lennot"><tr>');
-    response.write('<td><label>Time</label></td>');
-    response.write('<td><label>Destination</label></td>');
-    response.write('<td><label>Country</label></td>');
+    response.write('<td><label>Aika</label></td>');
+    response.write('<td><label>Kohde</label></td>');
+    response.write('<td><label>Maa</label></td>');
+    response.write('<td><label>Jäljellä olevat paikat</label></td>');
     response.write('</tr>');
 
-    let sql = "SELECT time, destination_destination_id FROM schedule WHERE date = '" + d.getFullYear() + "-" + month + "-" +d.getUTCDate()+ "' AND time >= '" +req.body.Startdate+ "' AND time <= '" + req.body.Enddate + "';";
+    let sql = "SELECT time, destination_destination_id, seats FROM schedule WHERE date = '" + d.getFullYear() + "-" + month + "-" +d.getUTCDate()+ "' AND time >= '" +req.body.Startdate+ "' AND time <= '" + req.body.Enddate + "';";
     console.log(sql);
     (async () => {
         try {
@@ -104,6 +105,7 @@ app.post('/public/akkilahdot.html', function (req, response) {
                     response.write('<td><label class="label">' + rows[i].time + '</label></td>');
                     response.write('<td><label class="label">' + row.destination_name+ '</label></td>');
                     response.write('<td><label class="label">' + row.country+ '</label></td>');
+                    response.write('<td><label class="label">' + rows[i].seats + '</label></td>');
                     response.write('</tr>');
                 });
             }
