@@ -385,7 +385,13 @@
       <option name="presentableId" value="LOCAL−00042" />
       <updated>1607082528946</updated>
     </task>
-    <option name="localTasksCounter" value="43" />
+    <task id="LOCAL−00043" summary="Korjauksia">
+      <created>1607083029808</created>
+      <option name="number" value="LOCAL−00043" />
+      <option name="presentableId" value="LOCAL−00043" />
+      <updated>1607083029808</updated>
+    </task>
+    <option name="localTasksCounter" value="44" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -443,10 +449,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="598" y="281" key="MultipleFileMergeDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1607082538393" />
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1607077567158">
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1607083032990">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1607077567158" />
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1607083032990" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

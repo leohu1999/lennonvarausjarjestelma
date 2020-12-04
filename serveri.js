@@ -72,11 +72,11 @@ app.get('/public/omat.html', function (req, response) {
                     var row = rows[key];
 
                     response.write('<tr onclick="remove(this)">');
-                    response.write('<td><label class="label">' + row.time + '</label></td>');
-                    response.write('<td><label class="label">' + row.date+ '</label></td>');
-                    response.write('<td><label class="label">' + row.destination_name+ '</label></td>');
-                    response.write('<td><label class="label">' + row.country+ '</label></td>');
-                    response.write('<td><label class="label">' + row.seats + '</label></td>');
+                    response.write('<td>' + row.time + '</td>');
+                    response.write('<td>' + row.date+ '</td>');
+                    response.write('<td>' + row.destination_name+ '</td>');
+                    response.write('<td>' + row.country+ '</td>');
+                    response.write('<td>' + row.seats + '</td>');
                     response.write('<td><button class="omatbuttons" onclick="">Muokkaa</button></td>');
                     response.write('<td><button class="omatbuttons"">Poista</button></td>');
                     response.write('</tr>')
