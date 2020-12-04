@@ -48,7 +48,11 @@ app.get('/public/varaus.html', function (req, res) {
 app.get('/public/muokkaus.html', function (req, response) {
     response.writeHead(200, {"Content-Type": "text/html"});
     response.write(muokkaus);
-}),
+});
+app.post('/public/muokkaus.html', function (req, response) {
+    response.writeHead(200, {"Content-Type": "text/html"});
+    response.write(muokkaus);
+});
 app.get('/public/omat.html', function (req, response) {
 
     response.writeHead(200, {"Content-Type": "text/html"});
