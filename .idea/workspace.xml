@@ -20,8 +20,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="77737cd1-010a-4474-9433-e546030cda9b" name="Default Changelist" comment="Korjauksia">
-      <change afterPath="$PROJECT_DIR$/public/muokkaus.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/muokkaus.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/muokkaus.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/serveri.js" beforeDir="false" afterPath="$PROJECT_DIR$/serveri.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -130,9 +131,7 @@
       <workItem from="1606993085297" duration="3898000" />
       <workItem from="1607004398333" duration="2385000" />
       <workItem from="1607072821562" duration="1112000" />
-      <workItem from="1607074696699" duration="4282000" />
-      <workItem from="1607080942332" duration="110000" />
-      <workItem from="1607081119374" duration="1327000" />
+      <workItem from="1607074696699" duration="3243000" />
     </task>
     <task id="LOCAL−00001" summary="Test">
       <created>1605858778523</created>
@@ -381,10 +380,10 @@
       <updated>1607077745309</updated>
     </task>
     <task id="LOCAL−00042" summary="Korjauksia">
-      <created>1607077997516</created>
+      <created>1607082528946</created>
       <option name="number" value="LOCAL−00042" />
       <option name="presentableId" value="LOCAL−00042" />
-      <updated>1607077997516</updated>
+      <updated>1607082528946</updated>
     </task>
     <option name="localTasksCounter" value="43" />
     <servers />
@@ -434,6 +433,20 @@
     <MESSAGE value="Äkkibutton muutos" />
     <MESSAGE value="Korjauksia" />
     <option name="LAST_COMMIT_MESSAGE" value="Korjauksia" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="740" y="275" key="FileChooserDialogImpl" timestamp="1607082210105">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="740" y="275" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1607082210105" />
+    <state x="598" y="281" key="MultipleFileMergeDialog" timestamp="1607082538393">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="598" y="281" key="MultipleFileMergeDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1607082538393" />
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1607077567158">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1607077567158" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

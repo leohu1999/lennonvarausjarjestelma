@@ -26,6 +26,7 @@ const query = util.promisify(con.query).bind(con);
 app.use(express.static(path.join(__dirname, 'public')));
 
 var omat = fs.readFileSync(__dirname + '/public/omat.html', "utf-8");
+var muokkaus = fs.readFileSync(__dirname + '/public/muokkaus.html', "utf-8");
 
 app.get('/', function (req, res) {
     res.sendFile(path.join(__dirname + '/public/index.html'));
@@ -43,8 +44,11 @@ app.get('/public/varaus.html', function (req, res) {
     res.sendFile(path.join(__dirname + '/public/varaus.html'));
     console.log("Varaa lento ladattu!");
 
-})
-
+});
+app.get('/public/muokkaus.html', function (req, response) {
+    response.writeHead(200, {"Content-Type": "text/html"});
+    response.write(muokkaus);
+}),
 app.get('/public/omat.html', function (req, response) {
 
     response.writeHead(200, {"Content-Type": "text/html"});

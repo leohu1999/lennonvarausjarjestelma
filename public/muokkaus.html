@@ -18,6 +18,28 @@
     </ul>
 </nav>
 <h1>Muokkaa Varausta</h1>
-
+<form action="/public/muokkaus.html" method="POST">
+    <div class="keskitä">
+        <input id="vahvista" type="submit" value="Poista varaus">
+        <p class="input" id="vahvistustekstit1"></p>
+        <p class="input" id="vahvistustekstit2"><p>
+        <p class="input" id="vahvistustekstit3"><p>
+        <p id="varatutpaikat" class="input">Varattuja paikkoja:</p><input id="vahvistustekstit4" type="number" name="maara" placeholder="Montako paikkaa varataan?" min="1" max="10">
+        <input class="piilotus" id="vahvistustekstit5" name="aika">
+        <input class="piilotus" id="vahvistustekstit7" name="kohde">
+        <input class="piilotus" id="vahvistustekstit6" name="lahtopaiva">
+        <input class="piilotus" id="vahvistustekstit8" name="maa">
+    </div>
+</form>
+<script>
+    document.getElementById("vahvistustekstit1").innerHTML = "Koneen lähtöaika: "+ localStorage.getItem("varausAika");
+    document.getElementById("vahvistustekstit2").innerHTML = "Kohde: "+ localStorage.getItem("varausKohde");
+    document.getElementById("vahvistustekstit3").innerHTML = "Lähtöpäivä: "+ localStorage.getItem("varausLahtopaiva");
+    document.getElementById("vahvistustekstit4").value = localStorage.getItem("varausPaikat");
+    document.getElementById("vahvistustekstit5").value = localStorage.getItem("varausAika");
+    document.getElementById("vahvistustekstit6").value = localStorage.getItem("varausLahtopaiva");
+    document.getElementById("vahvistustekstit7").value = localStorage.getItem("varausKohde");
+    document.getElementById("vahvistustekstit8").value = localStorage.getItem("varausMaa");
+</script>
 </body>
 </html>
