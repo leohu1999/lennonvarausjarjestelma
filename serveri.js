@@ -52,6 +52,7 @@ app.get('/public/muokkaus.html', function (req, response) {
 app.post('/public/muokkaus.html', function (req, response) {
     response.writeHead(200, {"Content-Type": "text/html"});
     response.write(muokkaus);
+    console.log("Hello!");
 });
 app.get('/public/omat.html', function (req, response) {
 
