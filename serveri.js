@@ -63,9 +63,6 @@ var maara;
 app.get('/public/varausvahvistus.html', function (req, response) {
     response.writeHead(200, {"Content-Type": "text/html"});
     response.write(varausvahvistus);
-    response.write('Kohde:<input type="text" id="fname" name="fname" value=kohde ><br><br>');
-    response.write('<p id="vahvistustekstit">Lähtopäivä: ' + lahtoaika +'<p>');
-    response.write('<p id="vahvistustekstit">Varattuja paikkoja: ' + maara +'<p>');
     //res.sendFile(path.join(__dirname + '/public/varausvahvistus.html'));
     console.log("Varausvahvistus ladattu!");
 

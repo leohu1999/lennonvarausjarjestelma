@@ -229,3 +229,10 @@ h3 {
     background: #4682B4;
     margin-left: 44%;
 }
+.input {
+    text-align: center;
+    color: #0000FF;
+    font-family: Goldman-Regular;
+    padding-top: 20px;
+    font-size: larger;
+}

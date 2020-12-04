@@ -37,15 +37,22 @@
 <p id="paikat">Paikkoja</p>
 <input id="input3" type="number" name="maara" placeholder="Montako paikkaa varataan?" min="1" max="10">
 <div class="keskitä">
-    <input id="hae" type="submit" value="Hae">
+    <input id="hae" type="submit" value="Hae" onclick="tallenna()">
 </div>
 
 </form>
 <script>
-
+    function tallenna() {
+        var name = document.getElementById("input2").value;
+        var name1 = document.getElementById("input3").value;
+        localStorage.setItem("lahtopaiva", name);
+        localStorage.setItem("maara", name1);
+    }
     function myFunction(x) {
-        alert(x.cells[1].innerHTML);
-        localStorage.setItem("imageurl", x.cells[0].innerHTML);
+
+
+        localStorage.setItem("kohde", x.cells[1].innerHTML);
+        localStorage.setItem("aika", x.cells[0].innerHTML);
         window.location = 'varausvahvistus.html';
     }
 </script>

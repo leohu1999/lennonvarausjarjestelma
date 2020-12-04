@@ -20,13 +20,19 @@
 <h1>Vahvista varauksesi</h1>
 <form action="/public/varausvahvistus.html" method="POST">
 <div class="keskitä">
+    <p>Lähtöaika:</p> <input class="input" id="aika" name="lahtoaika" >
+    <p>Kohde: </p><input class="input" id="kohde" name="kohde">
+    <p>Lähtöpäivä: </p><input class="input" id="lahtopaiva" name="lahtopaiva" >
+    <p>Varattuja paikkoja: </p><input class="input" id="paikat" name="paikat">
     <input id="vahvista" type="submit" value="Vahvista">
-    <p id="vahvistustekstit1"></p>
 </div>
 </form>
 <script>
-    var imageurl =localStorage.getItem("imageurl");
-    document.getElementById("vahvistustekstit1").innerHTML = "Koneen lähtöaika: "+ imageurl;
+    document.getElementById("kohde").value = localStorage.getItem("kohde");
+    document.getElementById("aika").value = localStorage.getItem("aika");
+    document.getElementById("lahtopaiva").value = localStorage.getItem("lahtopaiva");
+    document.getElementById("paikat").value = localStorage.getItem("maara");
+
 </script>
 </body>
 </html>
