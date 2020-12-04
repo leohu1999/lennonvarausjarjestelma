@@ -57,7 +57,7 @@ app.get('/public/omat.html', function (req, response) {
     response.write('<td><label>Varatut Paikat</label></td>');
     response.write('</tr>');
 
-    let sql = "SELECT * FROM reservations;";
+    let sql = "SELECT time,date,destination_name,country,seats FROM reservations;";
     (async () => {
         try {
 

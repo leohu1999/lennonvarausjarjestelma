@@ -31,12 +31,13 @@ ENGINE = InnoDB;
 -- -----------------------------------------------------
 
 CREATE TABLE IF NOT EXISTS `flights`.`reservations` (
+  `reservation_id` INT NOT NULL AUTO_INCREMENT,
   `time` TIME NOT NULL,
   `date` DATE NOT NULL,
   `destination_name` VARCHAR(45) NULL,
   `country` VARCHAR(30) NULL,
   `seats` INT,
-  PRIMARY KEY (`destination_name`)
+  PRIMARY KEY (`reservation_id`)
   )
 ENGINE = InnoDB;
 

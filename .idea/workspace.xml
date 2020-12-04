@@ -19,8 +19,9 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="77737cd1-010a-4474-9433-e546030cda9b" name="Default Changelist" comment="Parannuksia">
+    <list default="true" id="77737cd1-010a-4474-9433-e546030cda9b" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LennotTietokanta.sql" beforeDir="false" afterPath="$PROJECT_DIR$/LennotTietokanta.sql" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/serveri.js" beforeDir="false" afterPath="$PROJECT_DIR$/serveri.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -62,6 +63,7 @@
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_interpreter_path" value="node" />
     <property name="nodejs_package_manager_path" value="npm" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
     <property name="ts.external.directory.path" value="C:\Program Files\JetBrains\WebStorm 2020.2.3\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
@@ -129,6 +131,7 @@
       <workItem from="1606993085297" duration="3898000" />
       <workItem from="1607004398333" duration="2385000" />
       <workItem from="1607072821562" duration="1112000" />
+      <workItem from="1607074696699" duration="506000" />
     </task>
     <task id="LOCAL−00001" summary="Test">
       <created>1605858778523</created>
@@ -340,17 +343,14 @@
       <option name="presentableId" value="LOCAL−00035" />
       <updated>1607072769224</updated>
     </task>
-    <task id="LOCAL−00036" summary="Parannuksia">
-      <created>1607074447877</created>
-      <option name="number" value="LOCAL−00036" />
-      <option name="presentableId" value="LOCAL−00036" />
-      <updated>1607074447877</updated>
-    </task>
-    <option name="localTasksCounter" value="37" />
+    <option name="localTasksCounter" value="36" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="UnknownFeatures">
+    <option featureType="com.intellij.fileTypeFactory" implementationName="*.sql" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
@@ -387,15 +387,13 @@
     <MESSAGE value="button muutoksia" />
     <MESSAGE value="tietokanta muutos" />
     <MESSAGE value="post varausvahvistukselle muutoksia" />
+    <MESSAGE value="Parannuksia" />
     <MESSAGE value="Muutoksia" />
     <MESSAGE value="Omat varaukset.html" />
-    <MESSAGE value="Parannuksia" />
-    <option name="LAST_COMMIT_MESSAGE" value="Parannuksia" />
+    <option name="LAST_COMMIT_MESSAGE" value="Omat varaukset.html" />
   </component>
-  <component name="WindowStateProjectService">
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1607074451563">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1607074451563" />
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>
