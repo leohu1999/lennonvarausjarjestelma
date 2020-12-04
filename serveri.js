@@ -77,8 +77,7 @@ app.get('/public/omat.html', function (req, response) {
                     response.write('<td>' + row.destination_name+ '</td>');
                     response.write('<td>' + row.country+ '</td>');
                     response.write('<td>' + row.seats + '</td>');
-                    response.write('<td><button class="omatbuttons" onclick="">Muokkaa</button></td>');
-                    response.write('<td><button class="omatbuttons"">Poista</button></td>');
+                    response.write('<td><button class="omatbuttons">Muokkaa/Poista</button></td>');
                     response.write('</tr>')
             });
 
