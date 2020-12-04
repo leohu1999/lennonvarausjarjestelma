@@ -26,6 +26,8 @@
 <script>
 
     function myFunction(x) {
+
+        localStorage.setItem("maara", "0");
         localStorage.setItem("kohde", x.cells[1].innerHTML);
         localStorage.setItem("aika", x.cells[0].innerHTML);
         window.location = 'varausvahvistus.html';
