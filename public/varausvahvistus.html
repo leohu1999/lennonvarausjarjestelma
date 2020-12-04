@@ -18,10 +18,12 @@
     </ul>
 </nav>
 <h1>Vahvista varauksesi</h1>
+<form action="/public/varausvahvistus.html" method="POST">
 <div class="keskitä">
-    <button id="vahvista">Vahvista</button>
+    <input id="vahvista" type="submit" value="Vahvista">
     <p id="vahvistustekstit1"></p>
 </div>
+</form>
 <script>
     var imageurl =localStorage.getItem("imageurl");
     document.getElementById("vahvistustekstit1").innerHTML = "Koneen lähtöaika: "+ imageurl;
