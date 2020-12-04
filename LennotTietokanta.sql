@@ -69,7 +69,6 @@ SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
 insert into destination(destination_name, country)
 values('Pariisi','Ranska'),('Berliini','Saksa'),('Tukholma','Ruotsi'),('Oslo','Norja'),('Madrid','Espanja'),('Tokio','Japani'),('New York','Yhdysvallat'),('Lontoo','Iso-Britannia'),('Amsterdam','Alankomaat');
 
-
 insert into schedule(date, time, destination_destination_id)
 values('2020-12-03','08:00','1'),('2020-12-03','08:20','2'),('2020-12-03','08:40','3'),('2020-12-03','09:00','4'),('2020-12-03','09:20','5'),('2020-12-03','09:00','6'),('2020-12-03','09:40','7'),('2020-12-03','10:00','8'),('2020-12-03','10:20','9'),('2020-12-03','10:40','1'),('2020-12-03','11:00','2'),('2020-12-03','11:20','3'),('2020-12-03','11:40','4'),('2020-12-03','12:00','5'),('2020-12-03','12:20','6'),('2020-12-03','12:40','7'),('2020-12-03','22:20','8'),('2020-12-03','22:40','9');
 

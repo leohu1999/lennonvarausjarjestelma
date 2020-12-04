@@ -39,17 +39,12 @@
 <div class="keskitä">
     <input id="hae" type="submit" value="Hae">
 </div>
-    <form action="/public/varaus.html" method="GET">
-    </form>
+
 </form>
 <script>
 
     function myFunction(x) {
-        var x = document.createElement("INPUT");
-        x.setAttribute("type", "text");
-        x.setAttribute("value", "Hello World!");
-        document.body.appendChild(x);
-        alert(x.cells[0].innerHTML);
+        localStorage.setItem("imageurl", x.cells[0].innerHTML);
         window.location = 'varausvahvistus.html';
     }
 </script>
