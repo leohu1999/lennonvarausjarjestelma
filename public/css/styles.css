@@ -192,9 +192,33 @@ h3 {
     background: #4682B4;
     top: 300px;
 }
+#vahvista2{
+    position: relative;
+    font-family: Goldman-Bold;
+    font-size: larger;
+    color: white;
+    background: #4682B4;
+    top: 300px;
+}
+#vahvista3{
+    position: relative;
+    font-family: Goldman-Bold;
+    font-size: larger;
+    color: white;
+    background: #ED2839;
+    top: 300px;
+}
+
 #vahvistustekstit{
     text-align: center;
     color: #0000FF;
+    font-family: Goldman-Regular;
+    padding-top: 20px;
+    font-size: larger;
+}
+#vahvistustekstiterror{
+    text-align: center;
+    color: #ED2839;
     font-family: Goldman-Regular;
     padding-top: 20px;
     font-size: larger;

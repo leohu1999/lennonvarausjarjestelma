@@ -181,7 +181,7 @@ app.post('/public/varausvahvistus.html', function (req, response) {
         catch (err) {
             console.log("Database error!"+ err);
             console.log("Varauksen vahvistus epäonnistui!");
-            response.write('<p id="vahvistustekstit">Varauksen vahvistus epäonnistui!</p>');
+            response.write('<p id="vahvistustekstiterror">Varauksen vahvistus epäonnistui!</p>');
         }
     })()
 
