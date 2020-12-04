@@ -56,6 +56,7 @@ var month = d.getMonth() +1;
 var akkilahdot = fs.readFileSync(__dirname + '/public/akkilahdot.html', "utf-8");
 var kohteet = fs.readFileSync(__dirname + '/public/kohteet.html', "utf-8");
 var varaus = fs.readFileSync(__dirname + '/public/varaus.html', "utf-8");
+var varausvahvistus = fs.readFileSync(__dirname + "/public/varausvahvistus.html","utf-8");
 var kohde;
 var lahtoaika;
 var maara;
