@@ -49,8 +49,7 @@
         localStorage.setItem("maara", name1);
     }
     function myFunction(x) {
-
-
+        localStorage.setItem("maa", x.cells[2].innerHTML);
         localStorage.setItem("kohde", x.cells[1].innerHTML);
         localStorage.setItem("aika", x.cells[0].innerHTML);
         window.location = 'varausvahvistus.html';

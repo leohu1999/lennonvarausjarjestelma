@@ -25,6 +25,10 @@
     <p class="input" id="vahvistustekstit2"><p>
     <p class="input" id="vahvistustekstit3"><p>
     <p id="varatutpaikat" class="input">Varattuja paikkoja:</p><input id="vahvistustekstit4" type="number" name="maara" placeholder="Montako paikkaa varataan?" min="1" max="10">
+    <input class="piilotus" id="vahvistustekstit5" name="aika">
+    <input class="piilotus" id="vahvistustekstit7" name="kohde">
+    <input class="piilotus" id="vahvistustekstit6" name="lahtopaiva">
+    <input class="piilotus" id="vahvistustekstit8" name="maa">
 </div>
 </form>
 <script>
@@ -32,6 +36,10 @@
     document.getElementById("vahvistustekstit2").innerHTML = "Kohde: "+ localStorage.getItem("kohde");
     document.getElementById("vahvistustekstit3").innerHTML = "Lähtöpäivä: "+ localStorage.getItem("lahtopaiva");
     document.getElementById("vahvistustekstit4").value = localStorage.getItem("maara");
+    document.getElementById("vahvistustekstit5").value = localStorage.getItem("aika");
+    document.getElementById("vahvistustekstit6").value = localStorage.getItem("lahtopaiva");
+    document.getElementById("vahvistustekstit7").value = localStorage.getItem("kohde");
+    document.getElementById("vahvistustekstit8").value = localStorage.getItem("maa");
 </script>
 </body>
 </html>

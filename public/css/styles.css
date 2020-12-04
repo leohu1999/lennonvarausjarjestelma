@@ -271,3 +271,6 @@ h3 {
     color: white;
     background: #4682B4;
 }
+.piilotus {
+    visibility: hidden;
+}
