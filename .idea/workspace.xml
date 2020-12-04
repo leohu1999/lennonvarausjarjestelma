@@ -21,6 +21,7 @@
   <component name="ChangeListManager">
     <list default="true" id="77737cd1-010a-4474-9433-e546030cda9b" name="Default Changelist" comment="Parannuksia">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/varaus.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/varaus.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/serveri.js" beforeDir="false" afterPath="$PROJECT_DIR$/serveri.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -127,7 +128,7 @@
       <workItem from="1606905506358" duration="1096000" />
       <workItem from="1606933268321" duration="2227000" />
       <workItem from="1606993085297" duration="3898000" />
-      <workItem from="1607004398333" duration="2385000" />
+      <workItem from="1607004398333" duration="3375000" />
     </task>
     <task id="LOCAL−00001" summary="Test">
       <created>1605858778523</created>
@@ -315,7 +316,13 @@
       <option name="presentableId" value="LOCAL−00031" />
       <updated>1607066239721</updated>
     </task>
-    <option name="localTasksCounter" value="32" />
+    <task id="LOCAL−00032" summary="Parannuksia">
+      <created>1607066861883</created>
+      <option name="number" value="LOCAL−00032" />
+      <option name="presentableId" value="LOCAL−00032" />
+      <updated>1607066861883</updated>
+    </task>
+    <option name="localTasksCounter" value="33" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -367,9 +374,9 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="598" y="281" key="MultipleFileMergeDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1606991122581" />
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1607066244938">
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1607066887153">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1607066244938" />
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1607066887153" />
   </component>
 </project>

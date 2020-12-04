@@ -44,6 +44,7 @@
 <script>
 
     function myFunction(x) {
+        alert(x.cells[1].innerHTML);
         localStorage.setItem("imageurl", x.cells[0].innerHTML);
         window.location = 'varausvahvistus.html';
     }

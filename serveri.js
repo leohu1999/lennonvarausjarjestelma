@@ -252,8 +252,8 @@ app.get('/public/haku', function (req, response) {
                         var row = rows2[key];
                         response.write('<tr onclick="myFunction(this)">');
                         response.write('<td>'+ row.time +'</td>');
-                        response.write('<td><label class="label">' + rows[i].destination_name + '</label></td>');
-                        response.write('<td><label class="label">' + rows[i].country + '</label></td>');
+                        response.write('<td>' + rows[i].destination_name + '</td>');
+                        response.write('<td>' + rows[i].country + '</td>');
                         response.write('<td>'+ row.seats +'</td>');
                     });
                     response.end('</table>')
