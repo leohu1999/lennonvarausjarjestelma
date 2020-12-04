@@ -122,13 +122,13 @@ app.get('/public/akkilahdot.html', function (req, response) {
     response.writeHead(200, {"Content-Type": "text/html"});
     response.write(akkilahdot);
     response.write('<table id="lennot"><tr>');
-    response.write('<td><label>Time</label></td>');
-    response.write('<td><label>Destination</label></td>');
-    response.write('<td><label>Country</label></td>');
-
+    response.write('<td><label>Lähtöaika</label></td>');
+    response.write('<td><label>Kohde</label></td>');
+    response.write('<td><label>Maa</label></td>');
+    response.write('<td><label>Jäljellä olevat paikat</label></td>');
     response.write('</tr>');
 
-    let sql = "SELECT time, destination_destination_id FROM schedule WHERE  date = '" + d.getFullYear() + "-" + month + "-" +d.getUTCDate()+ "' AND time >= '" + hour + ":" + minute+ "';";
+    let sql = "SELECT time, destination_destination_id, seats FROM schedule WHERE  date = '" + d.getFullYear() + "-" + month + "-" +d.getUTCDate()+ "' AND time >= '" + hour + ":" + minute+ "';";
     (async () => {
         try {
 
@@ -148,6 +148,7 @@ app.get('/public/akkilahdot.html', function (req, response) {
                     response.write('<td><label class="label">' + rows[i].time + '</label></td>');
                     response.write('<td><label class="label">' + row.destination_name+ '</label></td>');
                     response.write('<td><label class="label">' + row.country+ '</label></td>');
+                    response.write('<td><label class="label">' + rows[i].seats + '</label></td>');
                     response.write('</tr>')
                 });
             }
@@ -223,15 +224,17 @@ app.get('/public/haku', function (req, response) {
                     response.write('<p id="etusivup">Valitsemallanne hakuehdoilla ei löytynyt yhtään lentoa</p>');
                 } else {
                     response.write('<table id="lennot"><tr>');
-                    response.write('<td><label>Time</label></td>');
-                    response.write('<td><label>Destination</label></td>');
-                    response.write('<td><label>Country</label></td>');
+                    response.write('<td><label>Aika</label></td>');
+                    response.write('<td><label>Kohde</label></td>');
+                    response.write('<td><label>Maa</label></td>');
+                    response.write('<td><label>Jäljellä olevat paikat</label></td>');
                     Object.keys(rows2).forEach(function (key) {
                         var row = rows2[key];
                         response.write('<tr onclick="myFunction(this)">');
                         response.write('<td>'+ row.time +'</td>');
                         response.write('<td><label class="label">' + rows[i].destination_name + '</label></td>');
                         response.write('<td><label class="label">' + rows[i].country + '</label></td>');
+                        response.write('<td>'+ row.seats +'</td>');
                     });
                     response.end('</table>')
                 }
