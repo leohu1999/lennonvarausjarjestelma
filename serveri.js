@@ -171,12 +171,12 @@ app.post('/public/varausvahvistus.html', function (req, response) {
             let sql1 = [];
             const rows = await query(sql);
             let string = JSON.stringify(rows);
-            console.log("Varaus vahvistettu!");
+            console.log("Varausksen vahvistus onnistui!");
             response.write('<p id="vahvistustekstit">Varauksen vahvistus onnistui!</p>');
         }
         catch (err) {
             console.log("Database error!"+ err);
-            console.log("Varausta ei vahvistettu!");
+            console.log("Varauksen vahvistus epäonnistui!");
             response.write('<p id="vahvistustekstit">Varauksen vahvistus epäonnistui!</p>');
         }
     })()
