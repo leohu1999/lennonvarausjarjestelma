@@ -21,10 +21,20 @@
 <form action="/public/akkilahdot.html" method="POST" style="text-align:center;">
     <input type="time" name="Startdate" placeholder="Enter time">
     <input type="time" name="Enddate" placeholder="Enter time">
-    <button id="äkkibutton" type="submit">Submit</button>
+    <button id="äkkibutton" type="submit" onclick="tallenna()">Submit</button>
 </form>
 <script>
+    function tallenna() {
+        var name = document.getElementById("input2").value;
+        var name1 = document.getElementById("input3").value;
+        localStorage.setItem("lahtopaiva", name);
+        localStorage.setItem("maara", name1);
+    }
     function myFunction(x) {
+
+
+        localStorage.setItem("kohde", x.cells[1].innerHTML);
+        localStorage.setItem("aika", x.cells[0].innerHTML);
         window.location = 'varausvahvistus.html';
     }
 </script>
