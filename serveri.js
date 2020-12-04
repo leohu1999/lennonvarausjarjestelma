@@ -25,6 +25,8 @@ const con = mysql.createConnection({
 const query = util.promisify(con.query).bind(con);
 app.use(express.static(path.join(__dirname, 'public')));
 
+var omat = fs.readFileSync(__dirname + '/public/omat.html', "utf-8");
+
 app.get('/', function (req, res) {
     res.sendFile(path.join(__dirname + '/public/index.html'));
     console.log("Etusivu ladattu!");
@@ -44,10 +46,52 @@ app.get('/public/varaus.html', function (req, res) {
 })
 
 app.get('/public/omat.html', function (req, res) {
-    res.sendFile(path.join(__dirname + '/public/omat.html'));
-    console.log("Omat varaukset ladattu!");
+
+    response.writeHead(200, {"Content-Type": "text/html"});
+    response.write(omat);
+    response.write('<table id="lennot"><tr>');
+    response.write('<td><label>Aika</label></td>');
+    response.write('<td><label>Päivämäärä</label></td>');
+    response.write('<td><label>Kohde</label></td>');
+    response.write('<td><label>Maa</label></td>');
+    response.write('<td><label>Varatut Paikat</label></td>');
+    response.write('</tr>');
+
+    let sql = "SELECT * FROM reservations;";
+    (async () => {
+        try {
+
+            let sql1 = [];
+            const rows = await query(sql);
+            Object.keys(rows).forEach(function (key) {
+                var row = rows[key];
+                sql1.push("SELECT * FROM destination WHERE destination_id='" + row.destination_destination_id + "';");
+
+            });
+
+            for (var i = 0; i < sql1.length; i++) {
+                const rows2 = await query(sql1[i]);
+                Object.keys(rows2).forEach(function (key) {
+                    var row = rows2[key];
+                    response.write('<tr>');
+                    response.write('<td><label class="label">' + rows[i].time + '</label></td>');
+                    response.write('<td><label class="label">' + row.date+ '</label></td>');
+                    response.write('<td><label class="label">' + row.destination_name+ '</label></td>');
+                    response.write('<td><label class="label">' + row.country+ '</label></td>');
+                    response.write('<td><label class="label">' + rows[i].seats + '</label></td>');
+                    response.write('</tr>')
+                });
+            }
+            response.end('</table>')
+        }
+        catch (err) {
+            console.log("Database error!"+ err);
+        }
+    })()
+    console.log("Omat Varaukset Ladattu!");
 
 });
+
 var varausvahvistus = fs.readFileSync(__dirname + '/public/varausvahvistus.html', "utf-8");
 var d = new Date();
 var hour = d.getUTCHours() +2;
