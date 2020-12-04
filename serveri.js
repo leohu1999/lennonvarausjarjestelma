@@ -56,7 +56,6 @@ var month = d.getMonth() +1;
 var akkilahdot = fs.readFileSync(__dirname + '/public/akkilahdot.html', "utf-8");
 var kohteet = fs.readFileSync(__dirname + '/public/kohteet.html', "utf-8");
 var varaus = fs.readFileSync(__dirname + '/public/varaus.html', "utf-8");
-var varausvahvistus = fs.readFileSync(__dirname + '/public/varausvahvistus.html',"utf-8");
 var kohde;
 var lahtoaika;
 var maara;
@@ -64,6 +63,9 @@ var maara;
 app.get('/public/varausvahvistus.html', function (req, response) {
     response.writeHead(200, {"Content-Type": "text/html"});
     response.write(varausvahvistus);
+    response.write('<p id="vahvistustekstit">Kohde: ' + kohde +'<p>');
+    response.write('<p id="vahvistustekstit">Lähtopäivä: ' + lahtoaika +'<p>');
+    response.write('<p id="vahvistustekstit">Varattuja paikkoja: ' + maara +'<p>');
     //res.sendFile(path.join(__dirname + '/public/varausvahvistus.html'));
     console.log("Varausvahvistus ladattu!");
 
@@ -119,10 +121,7 @@ app.post('/public/akkilahdot.html', function (req, response) {
 });
 app.post('/public/varausvahvistus.html', function (req, response) {
 
-    response.writeHead(200, {"Content-Type": "text/html"});
-    response.write(varausvahvistus);
-
-    let sql = "INSERT INTO reservations VALUES ()";
+    let sql = "INSERT INTO reservations VALUES ( )";
     console.log(sql);
     (async () => {
         try {
@@ -130,16 +129,12 @@ app.post('/public/varausvahvistus.html', function (req, response) {
             let sql1 = [];
             const rows = await query(sql);
             let string = JSON.stringify(rows);
-            response.write('<p id="vahvistustekstit">Varauksen vahvistus onnistui!<p>');
-            console.log("Varaus vahvistettu!");
         }
         catch (err) {
             console.log("Database error!"+ err);
-            response.write('<p id="vahvistustekstit">Varauksen vahvistus epäonnistui!<p>');
-            response.write('<p id="vahvistustekstit">Yritä varausta uudelleen<p>');
-            console.log("Varausta ei vahvistettu!");
         }
     })()
+    console.log("Varaus vahvistettu!");
 
 });
 
