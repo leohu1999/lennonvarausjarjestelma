@@ -19,10 +19,9 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="77737cd1-010a-4474-9433-e546030cda9b" name="Default Changelist" comment="Korjauksia serveriin">
+    <list default="true" id="77737cd1-010a-4474-9433-e546030cda9b" name="Default Changelist" comment="Kaikki Kohteet muutoksia">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/kohteet.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/kohteet.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/serveri.js" beforeDir="false" afterPath="$PROJECT_DIR$/serveri.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -133,12 +132,6 @@
       <workItem from="1607072821562" duration="1112000" />
       <workItem from="1607074696699" duration="3243000" />
       <workItem from="1607257748182" duration="1720000" />
-    </task>
-    <task id="LOCAL−00004" summary="Homepage">
-      <created>1605860394258</created>
-      <option name="number" value="LOCAL−00004" />
-      <option name="presentableId" value="LOCAL−00004" />
-      <updated>1605860394258</updated>
     </task>
     <task id="LOCAL−00005" summary="yes">
       <created>1605860478261</created>
@@ -428,7 +421,13 @@
       <option name="presentableId" value="LOCAL−00052" />
       <updated>1607260885360</updated>
     </task>
-    <option name="localTasksCounter" value="53" />
+    <task id="LOCAL−00053" summary="Kaikki Kohteet muutoksia">
+      <created>1607263711651</created>
+      <option name="number" value="LOCAL−00053" />
+      <option name="presentableId" value="LOCAL−00053" />
+      <updated>1607263711651</updated>
+    </task>
+    <option name="localTasksCounter" value="54" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -450,7 +449,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Navigation baari" />
     <MESSAGE value="CSS tyylejä ja fontit" />
     <MESSAGE value="Logo, html-sivut sekä hieman CSS-korjauksia." />
     <MESSAGE value="Varaus.html" />
@@ -475,7 +473,8 @@
     <MESSAGE value="Korjauksia" />
     <MESSAGE value="CSS korjauksia" />
     <MESSAGE value="Korjauksia serveriin" />
-    <option name="LAST_COMMIT_MESSAGE" value="Korjauksia serveriin" />
+    <MESSAGE value="Kaikki Kohteet muutoksia" />
+    <option name="LAST_COMMIT_MESSAGE" value="Kaikki Kohteet muutoksia" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

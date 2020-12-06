@@ -306,12 +306,6 @@ app.post('/public/kohteet.html', function (req, response) {
 
     response.writeHead(200, {"Content-Type": "text/html"});
     response.write(kohteet);
-    response.write('<table id="lennot"><tr>');
-    response.write('<td><label>Aika</label></td>');
-    response.write('<td><label>Kohde</label></td>');
-    response.write('<td><label>Maa</label></td>');
-    response.write('<td><label>Jäljellä olevat paikat</label></td>');
-    response.write('</tr>');
 
     let sql = "SELECT * from schedule";
     console.log(sql);
