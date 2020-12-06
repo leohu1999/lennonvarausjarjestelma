@@ -292,7 +292,7 @@ app.get('/public/kohteet.html', function (req, response) {
             console.log(rows);
             Object.keys(rows).forEach(function (key) {
                 var row = rows[key];
-                response.write('<tr>');
+                response.write('<tr onclick="myFunction(this)">');
                 response.write('<td><label class="label">' + row.destination_name+ '</label></td>');
                 response.write('<td><label class="label">' + row.country+ '</label></td>');
                 response.write('</tr>');
@@ -305,7 +305,55 @@ app.get('/public/kohteet.html', function (req, response) {
         }
     })()
     //res.sendFile(path.join(__dirname + '/public/akkilahdot.html'));
-    console.log("kohteet ladattu!");
+    console.log("Kohteet ladattu!");
+
+});
+app.post('/public/kohteet.html', function (req, response) {
+
+    response.writeHead(200, {"Content-Type": "text/html"});
+    response.write(kohteet);
+    response.write('<table id="lennot"><tr>');
+    response.write('<td><label>Aika</label></td>');
+    response.write('<td><label>Kohde</label></td>');
+    response.write('<td><label>Maa</label></td>');
+    response.write('<td><label>Jäljellä olevat paikat</label></td>');
+    response.write('</tr>');
+
+    let sql = "SELECT * from schedule";
+    console.log(sql);
+    (async () => {
+        try {
+
+            let sql1 = [];
+            const rows = await query(sql);
+            let string = JSON.stringify(rows);
+
+            Object.keys(rows).forEach(function (key) {
+                var row = rows[key];
+                sql1.push("SELECT * FROM destination WHERE destination_id='" + row.destination_destination_id + "';");
+
+            });
+
+            for (var i = 0; i < sql1.length; i++) {
+                const rows2 = await query(sql1[i]);
+                Object.keys(rows2).forEach(function (key) {
+                    var row = rows2[key];
+                    response.write('<tr onclick="myFunction(this)">');
+                    response.write('<td><label class="label">' + rows[i].time + '</label></td>');
+                    response.write('<td><label class="label">' + row.destination_name+ '</label></td>');
+                    response.write('<td><label class="label">' + row.country+ '</label></td>');
+                    response.write('<td><label class="label">' + rows[i].seats + '</label></td>');
+                    response.write('</tr>');
+                });
+            }
+            response.end('</table>');
+        }
+        catch (err) {
+            console.log("Database error!"+ err);
+        }
+    })()
+    //res.sendFile(path.join(__dirname + '/public/akkilahdot.html'));
+    console.log("Kohteet ladattu!");
 
 });
 
