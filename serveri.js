@@ -48,6 +48,7 @@ app.get('/public/varaus.html', function (req, res) {
 app.get('/public/muokkaus.html', function (req, response) {
     response.writeHead(200, {"Content-Type": "text/html"});
     response.write(muokkaus);
+    response.end();
 });
 app.post('/public/muokkaus.html', function (req, response) {
     response.writeHead(200, {"Content-Type": "text/html"});
@@ -322,7 +323,7 @@ app.get('/public/haku', function (req, response) {
             });
             for (var i = 0; i < sql2.length; i++) {
                 const rows2 = await query(sql2[i]);
-                if (rows2 === undefined || rows2.length == 0) {
+                if (sql2 === undefined || sql2.length == 0) {
                     response.write('<p id="etusivup">Valitsemallanne hakuehdoilla ei löytynyt yhtään lentoa</p>');
                 } else {
                     response.write('<table id="lennot"><tr>');
@@ -338,10 +339,10 @@ app.get('/public/haku', function (req, response) {
                         response.write('<td>' + rows[i].country + '</td>');
                         response.write('<td>'+ row.seats +'</td>');
                     });
-                    response.end('</table>')
+
                 }
             }
-
+            response.end('</table>')
 
         }
         catch (err) {
