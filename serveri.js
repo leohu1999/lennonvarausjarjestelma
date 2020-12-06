@@ -52,7 +52,14 @@ app.get('/public/muokkaus.html', function (req, response) {
 app.post('/public/muokkaus.html', function (req, response) {
     response.writeHead(200, {"Content-Type": "text/html"});
     response.write(muokkaus);
-    console.log("Hello!");
+    console.log(req.body.varausAika);
+    response.end();
+});
+app.post('/public/poisto', function (req, response) {
+    response.writeHead(200, {"Content-Type": "text/html"});
+    response.write(muokkaus);
+    console.log(req.body.varausKohde);
+    response.end();
 });
 app.get('/public/omat.html', function (req, response) {
 

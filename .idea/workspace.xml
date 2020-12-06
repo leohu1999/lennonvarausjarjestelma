@@ -19,7 +19,12 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="77737cd1-010a-4474-9433-e546030cda9b" name="Default Changelist" comment="Korjauksia" />
+    <list default="true" id="77737cd1-010a-4474-9433-e546030cda9b" name="Default Changelist" comment="Korjauksia">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LennotTietokanta.sql" beforeDir="false" afterPath="$PROJECT_DIR$/LennotTietokanta.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/muokkaus.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/muokkaus.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/serveri.js" beforeDir="false" afterPath="$PROJECT_DIR$/serveri.js" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -55,7 +60,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="javascript.nodejs.core.library.configured.version" value="14.15.0" />
     <property name="javascript.nodejs.core.library.typings.version" value="14.14.10" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../ExpressApp" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_interpreter_path" value="node" />
     <property name="nodejs_package_manager_path" value="npm" />
@@ -128,12 +133,7 @@
       <workItem from="1607004398333" duration="2385000" />
       <workItem from="1607072821562" duration="1112000" />
       <workItem from="1607074696699" duration="3243000" />
-    </task>
-    <task id="LOCAL−00001" summary="Test">
-      <created>1605858778523</created>
-      <option name="number" value="LOCAL−00001" />
-      <option name="presentableId" value="LOCAL−00001" />
-      <updated>1605858778523</updated>
+      <workItem from="1607257748182" duration="1720000" />
     </task>
     <task id="LOCAL−00002" summary="Test">
       <created>1605858813735</created>
@@ -423,7 +423,13 @@
       <option name="presentableId" value="LOCAL−00049" />
       <updated>1607086239394</updated>
     </task>
-    <option name="localTasksCounter" value="50" />
+    <task id="LOCAL−00050" summary="Korjauksia">
+      <created>1607257774075</created>
+      <option name="number" value="LOCAL−00050" />
+      <option name="presentableId" value="LOCAL−00050" />
+      <updated>1607257774075</updated>
+    </task>
+    <option name="localTasksCounter" value="51" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

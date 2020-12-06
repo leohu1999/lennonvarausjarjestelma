@@ -20,12 +20,6 @@
 <h1>Muokkaa Varausta</h1>
     <div class="keskitä">
         <form action="/public/muokkaus.html" method="POST">
-            <input id="vahvista2" type="submit" value="Vahvista muokkaukset">
-        </form>
-        <form action="/public/muokkaus.html" method="DELETE">
-            <input id="vahvista3" type="submit" value="Poista varaus">
-        </form>
-        <form action="/public/muokkaus.html" method="POST">
             <p class="input" id="vahvistustekstit1"></p>
             <p class="input" id="vahvistustekstit2"><p>
             <p class="input" id="vahvistustekstit3"><p>
@@ -35,6 +29,8 @@
             <input class="piilotus" id="vahvistustekstit6" name="varausLahtopaiva">
             <input class="piilotus" id="vahvistustekstit8" name="varausMaa">
             <input class="piilotus" id="vahvistustekstit9" name="id">
+            <button type="submit">Submit</button>
+            <button type="submit" formaction="/public/poisto">Submit to another page</button>
         </form>
     </div>
 <script>
