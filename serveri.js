@@ -72,9 +72,18 @@ app.post('/public/poisto', function (req, response) {
     response.writeHead(200, {"Content-Type": "text/html"});
     response.write(muokkaus);
     let sql = "DELETE FROM reservations WHERE reservation_id='"+ req.body.id +"';";
+    let sql2 = "SELECT destination_id FROM destination where destination_name='" + req.body.varausKohde +"';";
     (async () => {
         try {
+            let sql1 = [];
             const rows = await query(sql);
+            const rows2 = await query(sql2);
+            Object.keys(rows2).forEach(function (key) {
+                var row = rows2[key];
+                sql1.push("UPDATE schedule set seats = seats + " + req.body.varausPaikat + " WHERE date = '" + req.body.varausLahtopaiva + "' AND time = '" + req.body.varausAika + "' AND destination_destination_id = '" + row.destination_id + "';");
+            });
+            console.log(sql1[0]);
+            const rows1 = await query(sql1[0]);
             console.log(rows);
             response.write('<p id="vahvistustekstit">Varauksen poisto onnistui!</p>');
             response.end();
@@ -108,11 +117,11 @@ app.get('/public/omat.html', function (req, response) {
             console.log(rows);
             Object.keys(rows).forEach(function (key) {
                     var row = rows[key];
-
+                    var date = row.date
                     response.write('<tr onclick="remove(this)">');
                     response.write('<td>' + row.reservation_id + '</td>');
                     response.write('<td>' + row.time + '</td>');
-                    response.write('<td>' + row.date+ '</td>');
+                    response.write('<td>' + date.getFullYear() + '-' + (date.getUTCMonth()+1) + '-' +(date.getUTCDate()+1)+ '</td>');
                     response.write('<td>' + row.destination_name+ '</td>');
                     response.write('<td>' + row.country+ '</td>');
                     response.write('<td>' + row.seats + '</td>');
@@ -204,28 +213,47 @@ app.post('/public/varausvahvistus.html', function (req, response) {
 
     response.writeHead(200, {"Content-Type": "text/html"});
     response.write(varausvahvistus);
-    let sql2 = "SELECT destination_name FROM destination where destination_name='" + req.body.kohde +"';";
-    let sql = "INSERT INTO reservations (time,date,destination_name,country,seats) VALUES ('" + req.body.aika + "','" + req.body.lahtopaiva + "','" + req.body.kohde + "','" + req.body.maa + "','" + req.body.maara + "')";
 
+    let sql = "INSERT INTO reservations (time,date,destination_name,country,seats) VALUES ('" + req.body.aika + "','" + req.body.lahtopaiva + "','" + req.body.kohde + "','" + req.body.maa + "','" + req.body.maara + "')";
+    let sql2 = "SELECT destination_id FROM destination where destination_name='" + req.body.kohde +"';";
 
     console.log(sql);
     (async () => {
         try {
-            let sql1;
+            let sql1 = [];
+            let sql4 = [];
+            let seats = [];
             const rows = await query(sql);
             const rows1 = await query(sql2);
-            Object.keys(rows2).forEach(function (key) {
-                var row = rows1[key];
-                let sql1 = "UPDATE schedule set seats = seats - "+ req.body.maara +" WHERE date = '" + req.body.lahtopaiva +"' AND destination_name = '" + row.destination_name + "';"
+            console.log(rows1);
+
+                Object.keys(rows1).forEach(function (key) {
+                    var row = rows1[key];
+                    sql4.push("SELECT seats FROM schedule WHERE date = '" + req.body.lahtopaiva +"' AND time = '"+ req.body.aika +"' AND destination_destination_id = '" + row.destination_id + "';");
+                    sql1.push("UPDATE schedule set seats = seats - " + req.body.maara + " WHERE date = '" + req.body.lahtopaiva + "' AND time = '" + req.body.aika + "' AND destination_destination_id = '" + row.destination_id + "';");
+                });
+
+            console.log(sql1[0]);
+            console.log(sql4[0])
+            const rows3 = await query(sql4[0]);
+            Object.keys(rows3).forEach(function (key) {
+                var row = rows3[key];
+                seats.push(row.seats);
             });
-            const rows2= await query(sql1);
-            console.log("Varausksen vahvistus onnistui!");
-            response.write('<p id="vahvistustekstit">Varauksen vahvistus onnistui!</p>');
+
+            if ((seats - req.body.maara) >= 0) {
+                const rows2= await query(sql1[0]);
+                console.log("Varausksen vahvistus onnistui!");
+                response.write('<p id="vahvistustekstit">Varauksen vahvistus onnistui!</p>');
+            } else {
+                response.write('<p id="vahvistustekstiterror">Varauksen vahvistus epäonnistui! Koneessa tilaa ' + seats+' paikkaa</p>');
+            }
+
         }
         catch (err) {
             console.log("Database error!"+ err);
             console.log("Varauksen vahvistus epäonnistui!");
-            response.write('<p id="vahvistustekstiterror">Varauksen vahvistus epäonnistui!</p>');
+
         }
     })()
 

@@ -21,7 +21,6 @@
   <component name="ChangeListManager">
     <list default="true" id="77737cd1-010a-4474-9433-e546030cda9b" name="Default Changelist" comment="Korjauksia">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/kohteet.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/kohteet.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/serveri.js" beforeDir="false" afterPath="$PROJECT_DIR$/serveri.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -133,12 +132,7 @@
       <workItem from="1607072821562" duration="1112000" />
       <workItem from="1607074696699" duration="3243000" />
       <workItem from="1607257748182" duration="1720000" />
-    </task>
-    <task id="LOCAL−00005" summary="yes">
-      <created>1605860478261</created>
-      <option name="number" value="LOCAL−00005" />
-      <option name="presentableId" value="LOCAL−00005" />
-      <updated>1605860478261</updated>
+      <workItem from="1607271946733" duration="5117000" />
     </task>
     <task id="LOCAL−00006" summary="yes">
       <created>1605860504117</created>
@@ -428,7 +422,13 @@
       <option name="presentableId" value="LOCAL−00053" />
       <updated>1607262014334</updated>
     </task>
-    <option name="localTasksCounter" value="54" />
+    <task id="LOCAL−00054" summary="Korjauksia">
+      <created>1607263739714</created>
+      <option name="number" value="LOCAL−00054" />
+      <option name="presentableId" value="LOCAL−00054" />
+      <updated>1607263739714</updated>
+    </task>
+    <option name="localTasksCounter" value="55" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -482,6 +482,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1607262017366" />
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1607264713811">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1607264713811" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
