@@ -19,7 +19,7 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="77737cd1-010a-4474-9433-e546030cda9b" name="Default Changelist" comment="Korjauksia">
+    <list default="true" id="77737cd1-010a-4474-9433-e546030cda9b" name="Default Changelist" comment="CSS korjauksia">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/serveri.js" beforeDir="false" afterPath="$PROJECT_DIR$/serveri.js" afterDir="false" />
     </list>
@@ -132,12 +132,6 @@
       <workItem from="1607072821562" duration="1112000" />
       <workItem from="1607074696699" duration="3243000" />
       <workItem from="1607257748182" duration="1720000" />
-    </task>
-    <task id="LOCAL−00002" summary="Test">
-      <created>1605858813735</created>
-      <option name="number" value="LOCAL−00002" />
-      <option name="presentableId" value="LOCAL−00002" />
-      <updated>1605858813735</updated>
     </task>
     <task id="LOCAL−00003" summary="Testi">
       <created>1605859783493</created>
@@ -427,7 +421,13 @@
       <option name="presentableId" value="LOCAL−00050" />
       <updated>1607257774075</updated>
     </task>
-    <option name="localTasksCounter" value="51" />
+    <task id="LOCAL−00051" summary="CSS korjauksia">
+      <created>1607260220156</created>
+      <option name="number" value="LOCAL−00051" />
+      <option name="presentableId" value="LOCAL−00051" />
+      <updated>1607260220156</updated>
+    </task>
+    <option name="localTasksCounter" value="52" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -449,7 +449,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="yes" />
     <MESSAGE value="CSS file" />
     <MESSAGE value="Navigation baari" />
     <MESSAGE value="CSS tyylejä ja fontit" />
@@ -474,13 +473,8 @@
     <MESSAGE value="SQL muutoksia" />
     <MESSAGE value="Äkkibutton muutos" />
     <MESSAGE value="Korjauksia" />
-    <option name="LAST_COMMIT_MESSAGE" value="Korjauksia" />
-  </component>
-  <component name="WindowStateProjectService">
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1607260316923">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1607260316923" />
+    <MESSAGE value="CSS korjauksia" />
+    <option name="LAST_COMMIT_MESSAGE" value="CSS korjauksia" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

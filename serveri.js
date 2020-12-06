@@ -57,10 +57,12 @@ app.post('/public/muokkaus.html', function (req, response) {
         try {
             const rows = await query(sql);
             console.log(rows);
+            response.write('<p id="vahvistustekstit">Varauksen muokkaus onnistui!</p>');
             response.end();
         }
         catch (err) {
             console.log("Database error!"+ err);
+            response.write('<p id="vahvistustekstiterror">Varauksen muokkaus epäonnistui!</p>');
         }
     })()
     console.log("Varaus muokattu!");
@@ -73,10 +75,12 @@ app.post('/public/poisto', function (req, response) {
         try {
             const rows = await query(sql);
             console.log(rows);
+            response.write('<p id="vahvistustekstit">Varauksen poisto onnistui!</p>');
             response.end();
         }
         catch (err) {
             console.log("Database error!"+ err);
+            response.write('<p id="vahvistustekstiterror">Varauksen poisto epäonnistui!</p>');
         }
     })()
     console.log("Varaus poistettu!");
