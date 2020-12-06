@@ -204,15 +204,21 @@ app.post('/public/varausvahvistus.html', function (req, response) {
 
     response.writeHead(200, {"Content-Type": "text/html"});
     response.write(varausvahvistus);
-
+    let sql2 = "SELECT destination_name FROM destination where destination_name='" + req.body.kohde +"';";
     let sql = "INSERT INTO reservations (time,date,destination_name,country,seats) VALUES ('" + req.body.aika + "','" + req.body.lahtopaiva + "','" + req.body.kohde + "','" + req.body.maa + "','" + req.body.maara + "')";
+
+
     console.log(sql);
     (async () => {
         try {
-
-            let sql1 = [];
+            let sql1;
             const rows = await query(sql);
-            let string = JSON.stringify(rows);
+            const rows1 = await query(sql2);
+            Object.keys(rows2).forEach(function (key) {
+                var row = rows1[key];
+                let sql1 = "UPDATE schedule set seats = seats - "+ req.body.maara +" WHERE date = '" + req.body.lahtopaiva +"' AND destination_name = '" + row.destination_name + "';"
+            });
+            const rows2= await query(sql1);
             console.log("Varausksen vahvistus onnistui!");
             response.write('<p id="vahvistustekstit">Varauksen vahvistus onnistui!</p>');
         }
