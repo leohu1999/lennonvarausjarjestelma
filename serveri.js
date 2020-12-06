@@ -52,10 +52,18 @@ app.get('/public/muokkaus.html', function (req, response) {
 app.post('/public/muokkaus.html', function (req, response) {
     response.writeHead(200, {"Content-Type": "text/html"});
     response.write(muokkaus);
-
-
-    console.log(req.body.varausAika);
-    response.end();
+    let sql = "UPDATE reservations SET seats='" + req.body.varausPaikat + "' WHERE reservation_id='"+ req.body.id +"';";
+    (async () => {
+        try {
+            const rows = await query(sql);
+            console.log(rows);
+            response.end();
+        }
+        catch (err) {
+            console.log("Database error!"+ err);
+        }
+    })()
+    console.log("Varaus muokattu!");
 });
 app.post('/public/poisto', function (req, response) {
     response.writeHead(200, {"Content-Type": "text/html"});
@@ -63,8 +71,6 @@ app.post('/public/poisto', function (req, response) {
     let sql = "DELETE FROM reservations WHERE reservation_id='"+ req.body.id +"';";
     (async () => {
         try {
-
-            let sql1 = [];
             const rows = await query(sql);
             console.log(rows);
             response.end();

@@ -21,8 +21,7 @@
   <component name="ChangeListManager">
     <list default="true" id="77737cd1-010a-4474-9433-e546030cda9b" name="Default Changelist" comment="Korjauksia">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/css/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/styles.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/muokkaus.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/muokkaus.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/serveri.js" beforeDir="false" afterPath="$PROJECT_DIR$/serveri.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -476,6 +475,12 @@
     <MESSAGE value="Äkkibutton muutos" />
     <MESSAGE value="Korjauksia" />
     <option name="LAST_COMMIT_MESSAGE" value="Korjauksia" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1607260316923">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1607260316923" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
