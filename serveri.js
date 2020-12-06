@@ -325,8 +325,7 @@ app.get('/public/haku', function (req, response) {
                 sql2.push("SELECT * FROM schedule WHERE date='" + lahtoaika + "' AND destination_destination_id = '" + row.destination_id + "' AND seats >= '" + maara + "';");
                 console.log(sql2[0]);
             });
-            for (var i = 0; i < sql2.length; i++) {
-                const rows2 = await query(sql2[i]);
+                const rows2 = await query(sql2[0]);
                 if (sql2 === undefined || sql2.length == 0) {
                     response.write('<p id="etusivup">Valitsemallanne hakuehdoilla ei löytynyt yhtään lentoa</p>');
                 } else {
@@ -336,16 +335,18 @@ app.get('/public/haku', function (req, response) {
                     response.write('<td><label>Maa</label></td>');
                     response.write('<td><label>Jäljellä olevat paikat</label></td>');
                     Object.keys(rows2).forEach(function (key) {
+                        var i = 0;
                         var row = rows2[key];
                         response.write('<tr onclick="myFunction(this)">');
                         response.write('<td>'+ row.time +'</td>');
                         response.write('<td>' + rows[i].destination_name + '</td>');
                         response.write('<td>' + rows[i].country + '</td>');
                         response.write('<td>'+ row.seats +'</td>');
+                        i++;
                     });
 
                 }
-            }
+
             response.end('</table>')
 
         }
