@@ -1,16 +1,11 @@
 const express = require('express');
 const app = express();
-
 const mysql = require('mysql');
-
 const fs = require('fs');
-
 const path = require('path');
-
 const bodyParser = require('body-parser');
-
 const util = require('util');
-var http = require('http')
+const http = require('http')
 const url = require('url');
 
 app.use(bodyParser.urlencoded({extended: false}));
@@ -22,11 +17,25 @@ const con = mysql.createConnection({
     password: "olso",
     database: "flights"
 });
+
 const query = util.promisify(con.query).bind(con);
 app.use(express.static(path.join(__dirname, 'public')));
 
+var d = new Date();
+var hour = d.getUTCHours() +2;
+var minute = d.getUTCMinutes();
+var month = d.getMonth() +1;
+var kohde;
+var lahtoaika;
+var maara;
+var akkilahdot = fs.readFileSync(__dirname + '/public/akkilahdot.html', "utf-8");
+var kohteet = fs.readFileSync(__dirname + '/public/kohteet.html', "utf-8");
+var varaus = fs.readFileSync(__dirname + '/public/varaus.html', "utf-8");
+var varausvahvistus = fs.readFileSync(__dirname + "/public/varausvahvistus.html","utf-8");
+var kohdehtml = fs.readFileSync(__dirname + "/public/kohde.html","utf-8");
 var omat = fs.readFileSync(__dirname + '/public/omat.html', "utf-8");
 var muokkaus = fs.readFileSync(__dirname + '/public/muokkaus.html', "utf-8");
+
 
 app.get('/', function (req, res) {
     res.sendFile(path.join(__dirname + '/public/index.html'));
@@ -40,158 +49,50 @@ app.get('/public/index.html', function (req, res) {
 
 })
 
-app.get('/public/varaus.html', function (req, res) {
-    res.sendFile(path.join(__dirname + '/public/varaus.html'));
-    console.log("Varaa lento ladattu!");
-
-});
-app.get('/public/muokkaus.html', function (req, response) {
+app.get('/public/akkilahdot.html', function (req, response) {
     response.writeHead(200, {"Content-Type": "text/html"});
-    response.write(muokkaus);
-    response.end();
-
-});
-app.post('/public/muokkaus.html', function (req, response) {
-    response.writeHead(200, {"Content-Type": "text/html"});
-    response.write(muokkaus);
-    var alkuperaisetPaikat = req.body.varauspaikatAlkup;
-    let sql = "UPDATE reservations SET seats='" + req.body.varausPaikat + "' WHERE reservation_id='"+ req.body.id +"';";
-    let sql1 = "select destination_id FROM destination WHERE destination_name = '" + req.body.varausKohde + "';";
-    (async () => {
-        try {
-            let sql4 = [];
-            let seats = [];
-            let sql2 = [];
-            const rows = await query(sql1);
-            console.log(rows);
-            Object.keys(rows).forEach(function (key) {
-                var row = rows[key];
-                sql4.push("SELECT seats FROM schedule WHERE date = '" + req.body.varausLahtopaiva +"' AND time = '"+ req.body.varausAika +"' AND destination_destination_id = '" + row.destination_id + "';");
-                sql2.push("UPDATE schedule set seats = seats + " + (alkuperaisetPaikat - req.body.varausPaikat) + " WHERE date = '" + req.body.varausLahtopaiva + "' AND time = '" + req.body.varausAika + "' AND destination_destination_id = '" + row.destination_id + "';");
-                sql2.push("UPDATE schedule set seats = seats + " + (req.body.varausPaikat - alkuperaisetPaikat) + " WHERE date = '" + req.body.varausLahtopaiva + "' AND time = '" + req.body.varausAika + "' AND destination_destination_id = '" + row.destination_id + "';");
-            });
-            console.log(sql4[0]);
-            console.log(sql2[0]);
-            const rows1 = await query(sql4[0]);
-            Object.keys(rows1).forEach(function (key) {
-                var row = rows1[key];
-                seats.push(row.seats);
-            });
-            if (alkuperaisetPaikat > req.body.varausPaikat) {
-                if ((seats[0] - (alkuperaisetPaikat - req.body.varausPaikat)) >= 0) {
-                    const rows2 = await query(sql2[0]);
-                    const rows3 = await query(sql1);
-                    console.log("Varausksen muokkaus onnistui!");
-                    response.write('<p id="vahvistustekstit">Varauksen muokkaus onnistui!</p>');
-                } else {
-                    response.write('<p id="vahvistustekstiterror">Varauksen vahvistus epäonnistui! Koneessa tilaa ' + seats + ' paikkaa</p>');
-                }
-            } else {
-
-            }
-
-            response.end();
-        }
-        catch (err) {
-            console.log("Database error!"+ err);
-            response.write('<p id="vahvistustekstiterror">Varauksen muokkaus epäonnistui!</p>');
-        }
-    })()
-    console.log("Varaus muokattu!");
-});
-app.post('/public/poisto', function (req, response) {
-    response.writeHead(200, {"Content-Type": "text/html"});
-    response.write(muokkaus);
-    let sql = "DELETE FROM reservations WHERE reservation_id='"+ req.body.id +"';";
-    let sql2 = "SELECT destination_id FROM destination where destination_name='" + req.body.varausKohde +"';";
-    (async () => {
-        try {
-            let sql1 = [];
-            const rows = await query(sql);
-            const rows2 = await query(sql2);
-            Object.keys(rows2).forEach(function (key) {
-                var row = rows2[key];
-                sql1.push("UPDATE schedule set seats = seats + " + req.body.varausPaikat + " WHERE date = '" + req.body.varausLahtopaiva + "' AND time = '" + req.body.varausAika + "' AND destination_destination_id = '" + row.destination_id + "';");
-            });
-            console.log(sql1[0]);
-            const rows1 = await query(sql1[0]);
-            console.log(rows);
-            response.write('<p id="vahvistustekstit">Varauksen poisto onnistui!</p>');
-            response.end();
-        }
-        catch (err) {
-            console.log("Database error!"+ err);
-            response.write('<p id="vahvistustekstiterror">Varauksen poisto epäonnistui!</p>');
-        }
-    })()
-    console.log("Varaus poistettu!");
-});
-app.get('/public/omat.html', function (req, response) {
-
-    response.writeHead(200, {"Content-Type": "text/html"});
-    response.write(omat);
+    response.write(akkilahdot);
     response.write('<table id="lennot"><tr>');
-    response.write('<td><label>ID</label></td>');
-    response.write('<td><label>Aika</label></td>');
-    response.write('<td><label>Päivämäärä</label></td>');
+    response.write('<td><label>Lähtöaika</label></td>');
     response.write('<td><label>Kohde</label></td>');
     response.write('<td><label>Maa</label></td>');
-    response.write('<td><label>Varatut Paikat</label></td>');
+    response.write('<td><label>Jäljellä olevat paikat</label></td>');
     response.write('</tr>');
 
-    let sql = "SELECT time,date,destination_name,country,seats, reservation_id FROM reservations;";
+    let sql = "SELECT time, destination_destination_id, seats FROM schedule WHERE  date = '" + d.getFullYear() + "-" + month + "-" +d.getUTCDate()+ "' AND time >= '" + hour + ":" + minute+ "';";
     (async () => {
         try {
 
             let sql1 = [];
             const rows = await query(sql);
-            console.log(rows);
             Object.keys(rows).forEach(function (key) {
-                    var row = rows[key];
-                    var date = row.date
-                    response.write('<tr onclick="remove(this)">');
-                    response.write('<td>' + row.reservation_id + '</td>');
-                    response.write('<td>' + row.time + '</td>');
-                    response.write('<td>' + date.getFullYear() + '-' + (date.getUTCMonth()+1) + '-' +(date.getUTCDate()+1)+ '</td>');
-                    response.write('<td>' + row.destination_name+ '</td>');
-                    response.write('<td>' + row.country+ '</td>');
-                    response.write('<td>' + row.seats + '</td>');
-                    response.write('<td><button class="omatbuttons">Muokkaa/Poista</button></td>');
-                    response.write('</tr>')
+                var row = rows[key];
+                sql1.push("SELECT * FROM destination WHERE destination_id='" + row.destination_destination_id + "';");
+
             });
 
+            for (var i = 0; i < sql1.length; i++) {
+                const rows2 = await query(sql1[i]);
+                Object.keys(rows2).forEach(function (key) {
+                    var row = rows2[key];
+                    response.write('<tr onclick="myFunction(this)">');
+                    response.write('<td>' + rows[i].time + '</td>');
+                    response.write('<td>' + row.destination_name+ '</td>');
+                    response.write('<td>' + row.country+ '</td>');
+                    response.write('<td>' + rows[i].seats + '</td>');
+                    response.write('</tr>')
+                });
+            }
             response.end('</table>')
         }
         catch (err) {
             console.log("Database error!"+ err);
         }
     })()
-    console.log("Omat Varaukset Ladattu!");
+    //res.sendFile(path.join(__dirname + '/public/akkilahdot.html'));
+    console.log("Äkkilähdöt ladattu!");
 
 });
-
-var d = new Date();
-var hour = d.getUTCHours() +2;
-var minute = d.getUTCMinutes();
-var month = d.getMonth() +1;
-var akkilahdot = fs.readFileSync(__dirname + '/public/akkilahdot.html', "utf-8");
-var kohteet = fs.readFileSync(__dirname + '/public/kohteet.html', "utf-8");
-var varaus = fs.readFileSync(__dirname + '/public/varaus.html', "utf-8");
-var varausvahvistus = fs.readFileSync(__dirname + "/public/varausvahvistus.html","utf-8");
-var kohdehtml = fs.readFileSync(__dirname + "/public/kohde.html","utf-8");
-var kohde;
-var lahtoaika;
-var maara;
-
-app.get('/public/varausvahvistus.html', function (req, response) {
-    response.writeHead(200, {"Content-Type": "text/html"});
-    response.write(varausvahvistus);
-    response.end();
-    //res.sendFile(path.join(__dirname + '/public/varausvahvistus.html'));
-    console.log("Varausvahvistus ladattu!");
-
-});
-//Päivämäärä muuttujat joilla haetaan kellon aika jolloin käyttäjä menee sivulle. Lisäksi html-sivujen tiedostojen haku muuttujat
 
 app.post('/public/akkilahdot.html', function (req, response) {
     response.writeHead(200, {"Content-Type": "text/html"});
@@ -240,6 +141,287 @@ app.post('/public/akkilahdot.html', function (req, response) {
     console.log("Äkkilähdöt ladattu!");
 
 });
+
+app.get('/public/kohde.html', function (req, response) {
+    response.writeHead(200, {"Content-Type": "text/html"});
+    response.write(kohdehtml);
+    response.write('<table id="lennot"><tr>');
+    response.write('<td><label>Lähtöaika</label></td>');
+    response.write('<td><label>Päivämäärä</label></td>');
+    response.write('<td><label>Kohde</label></td>');
+    response.write('<td><label>Maa</label></td>');
+    response.write('<td><label>Jäljellä olevat paikat</label></td>');
+    response.write('</tr>');
+
+    let sql = "SELECT * FROM schedule;";
+    (async () => {
+        try {
+            const rows = await query(sql);
+            console.log(rows);
+            Object.keys(rows).forEach(function (key) {
+                var row = rows[key];
+                var date = row.date
+                response.write('<tr onclick="myFunction(this)">');
+                response.write('<td>'+ row.time +'</td>');
+                response.write('<td>'+ date.getFullYear() + '-' + (date.getUTCMonth()+1) + '-' +(date.getUTCDate()+1)+'</td>');
+                response.write('<td>' + row.destination_name + '</td>');
+                response.write('<td>' + row.country + '</td>');
+                response.write('<td>'+ row.seats +'</td>');
+                response.write('</tr>');
+
+            });
+            response.end('</table>')
+        }
+        catch (err) {
+            console.log("Database error!"+ err);
+        }
+    })()
+    console.log("Kohde ladattu!");
+
+});
+
+app.get('/public/kohteet.html', function (req, response) {
+    response.writeHead(200, {"Content-Type": "text/html"});
+    response.write(kohteet);
+    response.write('<table id="lennot"><tr>');
+    response.write('<td><label>Destination</label></td>');
+    response.write('<td><label>Country</label></td>');
+    response.write('</tr>');
+
+    let sql = "SELECT * FROM destination;";
+    (async () => {
+        try {
+            const rows = await query(sql);
+            console.log(rows);
+            Object.keys(rows).forEach(function (key) {
+                var row = rows[key];
+                response.write('<tr onclick="myFunction(this)">');
+                response.write('<td><label class="label">' + row.destination_name+ '</label></td>');
+                response.write('<td><label class="label">' + row.country+ '</label></td>');
+                response.write('</tr>');
+
+            });
+            response.end('</table>')
+        }
+        catch (err) {
+            console.log("Database error!"+ err);
+        }
+    })()
+    //res.sendFile(path.join(__dirname + '/public/akkilahdot.html'));
+    console.log("Kohteet ladattu!");
+
+});
+
+app.get('/public/muokkaus.html', function (req, response) {
+    response.writeHead(200, {"Content-Type": "text/html"});
+    response.write(muokkaus);
+    response.end();
+
+});
+
+app.post('/public/muokkaus.html', function (req, response) {
+    response.writeHead(200, {"Content-Type": "text/html"});
+    response.write(muokkaus);
+    var alkuperaisetPaikat = req.body.varauspaikatAlkup;
+    let sql = "UPDATE reservations SET seats='" + req.body.varausPaikat + "' WHERE reservation_id='"+ req.body.id +"';";
+    let sql1 = "select destination_id FROM destination WHERE destination_name = '" + req.body.varausKohde + "';";
+    (async () => {
+        try {
+            let sql4 = [];
+            let seats = [];
+            let sql2 = [];
+            const rows = await query(sql1);
+            console.log(rows);
+            Object.keys(rows).forEach(function (key) {
+                var row = rows[key];
+                sql4.push("SELECT seats FROM schedule WHERE date = '" + req.body.varausLahtopaiva +"' AND time = '"+ req.body.varausAika +"' AND destination_destination_id = '" + row.destination_id + "';");
+                sql2.push("UPDATE schedule set seats = seats + " + (alkuperaisetPaikat - req.body.varausPaikat) + " WHERE date = '" + req.body.varausLahtopaiva + "' AND time = '" + req.body.varausAika + "' AND destination_destination_id = '" + row.destination_id + "';");
+                sql2.push("UPDATE schedule set seats = seats + " + (req.body.varausPaikat - alkuperaisetPaikat) + " WHERE date = '" + req.body.varausLahtopaiva + "' AND time = '" + req.body.varausAika + "' AND destination_destination_id = '" + row.destination_id + "';");
+            });
+            console.log(sql4[0]);
+            console.log(sql2[0]);
+            const rows1 = await query(sql4[0]);
+            Object.keys(rows1).forEach(function (key) {
+                var row = rows1[key];
+                seats.push(row.seats);
+            });
+            if (alkuperaisetPaikat > req.body.varausPaikat) {
+                if ((seats[0] - (alkuperaisetPaikat - req.body.varausPaikat)) >= 0) {
+                    const rows2 = await query(sql2[0]);
+                    const rows3 = await query(sql1);
+                    console.log("Varausksen muokkaus onnistui!");
+                    response.write('<p id="vahvistustekstit">Varauksen muokkaus onnistui!</p>');
+                } else {
+                    response.write('<p id="vahvistustekstiterror">Varauksen vahvistus epäonnistui! Koneessa tilaa ' + seats + ' paikkaa</p>');
+                }
+            } else {
+
+            }
+
+            response.end();
+        }
+        catch (err) {
+            console.log("Database error!"+ err);
+            response.write('<p id="vahvistustekstiterror">Varauksen muokkaus epäonnistui!</p>');
+        }
+    })()
+    console.log("Varaus muokattu!");
+});
+
+app.post('/public/poisto', function (req, response) {
+    response.writeHead(200, {"Content-Type": "text/html"});
+    response.write(muokkaus);
+    let sql = "DELETE FROM reservations WHERE reservation_id='"+ req.body.id +"';";
+    let sql2 = "SELECT destination_id FROM destination where destination_name='" + req.body.varausKohde +"';";
+    (async () => {
+        try {
+            let sql1 = [];
+            const rows = await query(sql);
+            const rows2 = await query(sql2);
+            Object.keys(rows2).forEach(function (key) {
+                var row = rows2[key];
+                sql1.push("UPDATE schedule set seats = seats + " + req.body.varausPaikat + " WHERE date = '" + req.body.varausLahtopaiva + "' AND time = '" + req.body.varausAika + "' AND destination_destination_id = '" + row.destination_id + "';");
+            });
+            console.log(sql1[0]);
+            const rows1 = await query(sql1[0]);
+            console.log(rows);
+            response.write('<p id="vahvistustekstit">Varauksen poisto onnistui!</p>');
+            response.end();
+        }
+        catch (err) {
+            console.log("Database error!"+ err);
+            response.write('<p id="vahvistustekstiterror">Varauksen poisto epäonnistui!</p>');
+        }
+    })()
+    console.log("Varaus poistettu!");
+});
+
+app.get('/public/ohjeet.html', function (req, res) {
+    res.sendFile(path.join(__dirname + '/public/ohjeet.html'));
+    console.log("Ohjeet ladattu!");
+
+});
+
+app.get('/public/omat.html', function (req, response) {
+
+    response.writeHead(200, {"Content-Type": "text/html"});
+    response.write(omat);
+    response.write('<table id="lennot"><tr>');
+    response.write('<td><label>ID</label></td>');
+    response.write('<td><label>Aika</label></td>');
+    response.write('<td><label>Päivämäärä</label></td>');
+    response.write('<td><label>Kohde</label></td>');
+    response.write('<td><label>Maa</label></td>');
+    response.write('<td><label>Varatut Paikat</label></td>');
+    response.write('</tr>');
+
+    let sql = "SELECT time,date,destination_name,country,seats, reservation_id FROM reservations;";
+    (async () => {
+        try {
+
+            let sql1 = [];
+            const rows = await query(sql);
+            console.log(rows);
+            Object.keys(rows).forEach(function (key) {
+                var row = rows[key];
+                var date = row.date
+                response.write('<tr onclick="remove(this)">');
+                response.write('<td>' + row.reservation_id + '</td>');
+                response.write('<td>' + row.time + '</td>');
+                response.write('<td>' + date.getFullYear() + '-' + (date.getUTCMonth()+1) + '-' +(date.getUTCDate()+1)+ '</td>');
+                response.write('<td>' + row.destination_name+ '</td>');
+                response.write('<td>' + row.country+ '</td>');
+                response.write('<td>' + row.seats + '</td>');
+                response.write('<td><button class="omatbuttons">Muokkaa/Poista</button></td>');
+                response.write('</tr>')
+            });
+
+            response.end('</table>')
+        }
+        catch (err) {
+            console.log("Database error!"+ err);
+        }
+    })()
+    console.log("Omat Varaukset Ladattu!");
+
+});
+
+app.get('/public/haku', function (req, response) {
+
+    response.writeHead(200, {"Content-Type": "text/html"});
+    response.write(varaus);
+
+
+    response.write('</tr>');
+    let sql = "SELECT destination_id, destination_name, country FROM destination WHERE destination_name = '" + kohde + "';";
+    (async () => {
+        try {
+            let sql2 = [];
+            const rows = await query(sql);
+            Object.keys(rows).forEach(function (key) {
+                var row = rows[key];
+                sql2.push("SELECT * FROM schedule WHERE date='" + lahtoaika + "' AND destination_destination_id = '" + row.destination_id + "' AND seats >= '" + maara + "';");
+                console.log(sql2[0]);
+            });
+            const rows2 = await query(sql2[0]);
+            if (sql2 === undefined || sql2.length == 0) {
+                response.write('<p id="etusivup">Valitsemallanne hakuehdoilla ei löytynyt yhtään lentoa</p>');
+            } else {
+                response.write('<table id="lennot"><tr>');
+                response.write('<td><label>Aika</label></td>');
+                response.write('<td><label>Kohde</label></td>');
+                response.write('<td><label>Maa</label></td>');
+                response.write('<td><label>Jäljellä olevat paikat</label></td>');
+                Object.keys(rows2).forEach(function (key) {
+                    var i = 0;
+                    var row = rows2[key];
+                    response.write('<tr onclick="myFunction(this)">');
+                    response.write('<td>'+ row.time +'</td>');
+                    response.write('<td>' + rows[i].destination_name + '</td>');
+                    response.write('<td>' + rows[i].country + '</td>');
+                    response.write('<td>'+ row.seats +'</td>');
+                    i++;
+                });
+
+            }
+
+            response.end('</table>')
+
+        }
+        catch (err) {
+            console.log("Database error!"+ err);
+        }
+    })()
+});
+
+app.post('/public/haku', function(req,res){
+    console.log(req.body.aika);
+});
+
+app.get('/public/varaus.html', function (req, res) {
+    res.sendFile(path.join(__dirname + '/public/varaus.html'));
+    console.log("Varaa lento ladattu!");
+
+});
+
+app.post('/public/varaus.html', function(req,res){
+    kohde = req.body.kohde;
+    console.log(kohde);
+    lahtoaika = req.body.lahtoaika;
+    maara = req.body.maara;
+    console.log(lahtoaika);
+    return res.redirect('/public/haku');
+});
+
+app.get('/public/varausvahvistus.html', function (req, response) {
+    response.writeHead(200, {"Content-Type": "text/html"});
+    response.write(varausvahvistus);
+    response.end();
+    //res.sendFile(path.join(__dirname + '/public/varausvahvistus.html'));
+    console.log("Varausvahvistus ladattu!");
+
+});
+
 app.post('/public/varausvahvistus.html', function (req, response) {
 
     response.writeHead(200, {"Content-Type": "text/html"});
@@ -289,185 +471,6 @@ app.post('/public/varausvahvistus.html', function (req, response) {
         }
     })()
 
-});
-
-app.get('/public/akkilahdot.html', function (req, response) {
-    response.writeHead(200, {"Content-Type": "text/html"});
-    response.write(akkilahdot);
-    response.write('<table id="lennot"><tr>');
-    response.write('<td><label>Lähtöaika</label></td>');
-    response.write('<td><label>Kohde</label></td>');
-    response.write('<td><label>Maa</label></td>');
-    response.write('<td><label>Jäljellä olevat paikat</label></td>');
-    response.write('</tr>');
-
-    let sql = "SELECT time, destination_destination_id, seats FROM schedule WHERE  date = '" + d.getFullYear() + "-" + month + "-" +d.getUTCDate()+ "' AND time >= '" + hour + ":" + minute+ "';";
-    (async () => {
-        try {
-
-            let sql1 = [];
-            const rows = await query(sql);
-            Object.keys(rows).forEach(function (key) {
-                var row = rows[key];
-                sql1.push("SELECT * FROM destination WHERE destination_id='" + row.destination_destination_id + "';");
-
-            });
-
-            for (var i = 0; i < sql1.length; i++) {
-                const rows2 = await query(sql1[i]);
-                Object.keys(rows2).forEach(function (key) {
-                    var row = rows2[key];
-                    response.write('<tr onclick="myFunction(this)">');
-                    response.write('<td>' + rows[i].time + '</td>');
-                    response.write('<td>' + row.destination_name+ '</td>');
-                    response.write('<td>' + row.country+ '</td>');
-                    response.write('<td>' + rows[i].seats + '</td>');
-                    response.write('</tr>')
-                });
-            }
-            response.end('</table>')
-        }
-        catch (err) {
-            console.log("Database error!"+ err);
-        }
-    })()
-    //res.sendFile(path.join(__dirname + '/public/akkilahdot.html'));
-    console.log("Äkkilähdöt ladattu!");
-
-});
-
-app.get('/public/kohteet.html', function (req, response) {
-    response.writeHead(200, {"Content-Type": "text/html"});
-    response.write(kohteet);
-    response.write('<table id="lennot"><tr>');
-    response.write('<td><label>Destination</label></td>');
-    response.write('<td><label>Country</label></td>');
-    response.write('</tr>');
-
-    let sql = "SELECT * FROM destination;";
-    (async () => {
-        try {
-            const rows = await query(sql);
-            console.log(rows);
-            Object.keys(rows).forEach(function (key) {
-                var row = rows[key];
-                response.write('<tr onclick="myFunction(this)">');
-                response.write('<td><label class="label">' + row.destination_name+ '</label></td>');
-                response.write('<td><label class="label">' + row.country+ '</label></td>');
-                response.write('</tr>');
-
-            });
-            response.end('</table>')
-        }
-        catch (err) {
-            console.log("Database error!"+ err);
-        }
-    })()
-    //res.sendFile(path.join(__dirname + '/public/akkilahdot.html'));
-    console.log("Kohteet ladattu!");
-
-});
-app.get('/public/kohde.html', function (req, response) {
-    response.writeHead(200, {"Content-Type": "text/html"});
-    response.write(kohdehtml);
-    response.write('<table id="lennot"><tr>');
-    response.write('<td><label>Lähtöaika</label></td>');
-    response.write('<td><label>Päivämäärä</label></td>');
-    response.write('<td><label>Kohde</label></td>');
-    response.write('<td><label>Maa</label></td>');
-    response.write('<td><label>Jäljellä olevat paikat</label></td>');
-    response.write('</tr>');
-
-    let sql = "SELECT * FROM schedule;";
-    (async () => {
-        try {
-            const rows = await query(sql);
-            console.log(rows);
-            Object.keys(rows).forEach(function (key) {
-                var row = rows[key];
-                var date = row.date
-                response.write('<tr onclick="myFunction(this)">');
-                response.write('<td>'+ row.time +'</td>');
-                response.write('<td>'+ date.getFullYear() + '-' + (date.getUTCMonth()+1) + '-' +(date.getUTCDate()+1)+'</td>');
-                response.write('<td>' + row.destination_name + '</td>');
-                response.write('<td>' + row.country + '</td>');
-                response.write('<td>'+ row.seats +'</td>');
-                response.write('</tr>');
-
-            });
-            response.end('</table>')
-        }
-        catch (err) {
-            console.log("Database error!"+ err);
-        }
-    })()
-    console.log("Kohde ladattu!");
-
-});
-
-app.get('/public/ohjeet.html', function (req, res) {
-    res.sendFile(path.join(__dirname + '/public/ohjeet.html'));
-    console.log("Ohjeet ladattu!");
-
-});
-app.get('/public/haku', function (req, response) {
-
-    response.writeHead(200, {"Content-Type": "text/html"});
-    response.write(varaus);
-
-
-    response.write('</tr>');
-    let sql = "SELECT destination_id, destination_name, country FROM destination WHERE destination_name = '" + kohde + "';";
-    (async () => {
-        try {
-            let sql2 = [];
-            const rows = await query(sql);
-            Object.keys(rows).forEach(function (key) {
-                var row = rows[key];
-                sql2.push("SELECT * FROM schedule WHERE date='" + lahtoaika + "' AND destination_destination_id = '" + row.destination_id + "' AND seats >= '" + maara + "';");
-                console.log(sql2[0]);
-            });
-                const rows2 = await query(sql2[0]);
-                if (sql2 === undefined || sql2.length == 0) {
-                    response.write('<p id="etusivup">Valitsemallanne hakuehdoilla ei löytynyt yhtään lentoa</p>');
-                } else {
-                    response.write('<table id="lennot"><tr>');
-                    response.write('<td><label>Aika</label></td>');
-                    response.write('<td><label>Kohde</label></td>');
-                    response.write('<td><label>Maa</label></td>');
-                    response.write('<td><label>Jäljellä olevat paikat</label></td>');
-                    Object.keys(rows2).forEach(function (key) {
-                        var i = 0;
-                        var row = rows2[key];
-                        response.write('<tr onclick="myFunction(this)">');
-                        response.write('<td>'+ row.time +'</td>');
-                        response.write('<td>' + rows[i].destination_name + '</td>');
-                        response.write('<td>' + rows[i].country + '</td>');
-                        response.write('<td>'+ row.seats +'</td>');
-                        i++;
-                    });
-
-                }
-
-            response.end('</table>')
-
-        }
-        catch (err) {
-            console.log("Database error!"+ err);
-        }
-    })()
-});
-app.post('/public/haku', function(req,res){
-    console.log(req.body.aika);
-});
-
-app.post('/public/varaus.html', function(req,res){
-    kohde = req.body.kohde;
-    console.log(kohde);
-    lahtoaika = req.body.lahtoaika;
-    maara = req.body.maara;
-    console.log(lahtoaika);
-    return res.redirect('/public/haku');
 });
 
 const server = app.listen(8080, function () {
