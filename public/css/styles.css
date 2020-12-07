@@ -198,7 +198,7 @@ h3 {
     font-size: larger;
     color: white;
     background: #4682B4;
-    right: 470px;
+    right: 550px;
     top: 30px;
 }
 #vahvista3{
@@ -207,7 +207,7 @@ h3 {
     font-size: larger;
     color: white;
     background: #ED2839;
-    right: 470px;
+    right: 550px;
     top: 30px;
 }
 
@@ -240,7 +240,7 @@ h3 {
 #vahvistusteksti5{
     position: relative;
     bottom: 46px;
-    left: 730px;
+    left: 815px;
 }
 #varatutpaikat{
     position: relative;
