@@ -30,11 +30,16 @@
             <input class="piilotus" id="vahvistustekstit8" name="varausMaa">
             <input class="piilotus" id="vahvistustekstit9" name="id">
             <input class="piilotus" id="vahvistustekstit10" name="varauspaikatAlkup" type="number">
-            <button id="vahvista2" type="submit">Vahvista muokkaukset</button>
+            <button id="vahvista2" type="submit" onclick="paivita()">Vahvista muokkaukset</button>
             <button id="vahvista3" type="submit" formaction="/public/poisto">Poista varaus</button>
         </form>
     </div>
 <script>
+    function paivita() {
+        var tieto = document.getElementById("vahvistusteksti5").value
+        localStorage.setItem("varausPaikat", tieto);
+    }
+
     document.getElementById("vahvistustekstit1").innerHTML = "Koneen lähtöaika: "+ localStorage.getItem("varausAika");
     document.getElementById("vahvistustekstit2").innerHTML = "Kohde: "+ localStorage.getItem("varausKohde");
     document.getElementById("vahvistustekstit3").innerHTML = "Lähtöpäivä: "+ localStorage.getItem("varausLahtopaiva");
