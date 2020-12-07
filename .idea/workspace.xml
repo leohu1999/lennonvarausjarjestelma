@@ -21,6 +21,7 @@
   <component name="ChangeListManager">
     <list default="true" id="77737cd1-010a-4474-9433-e546030cda9b" name="Default Changelist" comment="Korjauksia">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/serveri.js" beforeDir="false" afterPath="$PROJECT_DIR$/serveri.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -133,12 +134,6 @@
       <workItem from="1607257748182" duration="1720000" />
       <workItem from="1607324431948" duration="1421000" />
       <workItem from="1607327621156" duration="1584000" />
-    </task>
-    <task id="LOCAL−00007" summary="CSS file">
-      <created>1605860728113</created>
-      <option name="number" value="LOCAL−00007" />
-      <option name="presentableId" value="LOCAL−00007" />
-      <updated>1605860728113</updated>
     </task>
     <task id="LOCAL−00008" summary="Navigation baari">
       <created>1606165433758</created>
@@ -428,7 +423,13 @@
       <option name="presentableId" value="LOCAL−00055" />
       <updated>1607329636925</updated>
     </task>
-    <option name="localTasksCounter" value="56" />
+    <task id="LOCAL−00056" summary="Korjauksia">
+      <created>1607330276804</created>
+      <option name="number" value="LOCAL−00056" />
+      <option name="presentableId" value="LOCAL−00056" />
+      <updated>1607330276804</updated>
+    </task>
+    <option name="localTasksCounter" value="57" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -482,10 +483,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="740" y="275" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1607330125601" />
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1607329639941">
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1607330284323">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1607329639941" />
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1607330284323" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

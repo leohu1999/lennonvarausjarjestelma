@@ -78,15 +78,20 @@ app.post('/public/muokkaus.html', function (req, response) {
                 seats.push(row.seats);
             });
             if (alkuperaisetPaikat > req.body.varausPaikat) {
-                if ((seats[0] - (alkuperaisetPaikat - req.body.varausPaikat)) >= 0) {
+
                     const rows2 = await query(sql2[0]);
                     const rows3 = await query(sql1);
                     console.log("Varausksen muokkaus onnistui!");
                     response.write('<p id="vahvistustekstit">Varauksen muokkaus onnistui!</p>');
-                } else {
-                    response.write('<p id="vahvistustekstiterror">Varauksen vahvistus epäonnistui! Koneessa tilaa ' + seats + ' paikkaa</p>');
-                }
+
             } else {
+                if ((seats[0] - (req.body.varausPaikat - alkuperaisetPaikat)) >= 0) {
+                    const rows2 = await query(sql2[1]);
+                    const rows3 = await query(sql1);
+                    response.write('<p id="vahvistustekstit">Varauksen muokkaus onnistui!</p>');
+                } else {
+                    response.write('<p id="vahvistustekstiterror">Varauksen muokkaus epäonnistui! Koneessa tilaa ' + seats+' paikkaa</p>');
+                }
 
             }
 
