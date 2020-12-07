@@ -29,6 +29,7 @@
             <input class="piilotus" id="vahvistustekstit6" name="varausLahtopaiva">
             <input class="piilotus" id="vahvistustekstit8" name="varausMaa">
             <input class="piilotus" id="vahvistustekstit9" name="id">
+            <input class="piilotus" id="vahvistustekstit10" name="varauspaikatAlkup" type="number">
             <button id="vahvista2" type="submit">Vahvista muokkaukset</button>
             <button id="vahvista3" type="submit" formaction="/public/poisto">Poista varaus</button>
         </form>
@@ -43,6 +44,7 @@
     document.getElementById("vahvistustekstit7").value = localStorage.getItem("varausKohde");
     document.getElementById("vahvistustekstit8").value = localStorage.getItem("varausMaa");
     document.getElementById("vahvistustekstit9").value = localStorage.getItem("id");
+    document.getElementById("vahvistustekstit10").value = localStorage.getItem("varausPaikat");
 </script>
 </body>
 </html>

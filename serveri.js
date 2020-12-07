@@ -49,16 +49,47 @@ app.get('/public/muokkaus.html', function (req, response) {
     response.writeHead(200, {"Content-Type": "text/html"});
     response.write(muokkaus);
     response.end();
+
 });
 app.post('/public/muokkaus.html', function (req, response) {
     response.writeHead(200, {"Content-Type": "text/html"});
     response.write(muokkaus);
+    var alkuperaisetPaikat = req.body.varauspaikatAlkup;
     let sql = "UPDATE reservations SET seats='" + req.body.varausPaikat + "' WHERE reservation_id='"+ req.body.id +"';";
+    let sql1 = "select destination_id FROM destination WHERE destination_name = '" + req.body.varausKohde + "';";
     (async () => {
         try {
-            const rows = await query(sql);
+            let sql4 = [];
+            let seats = [];
+            let sql2 = [];
+            const rows = await query(sql1);
             console.log(rows);
-            response.write('<p id="vahvistustekstit">Varauksen muokkaus onnistui!</p>');
+            Object.keys(rows).forEach(function (key) {
+                var row = rows[key];
+                sql4.push("SELECT seats FROM schedule WHERE date = '" + req.body.varausLahtopaiva +"' AND time = '"+ req.body.varausAika +"' AND destination_destination_id = '" + row.destination_id + "';");
+                sql2.push("UPDATE schedule set seats = seats + " + (alkuperaisetPaikat - req.body.varausPaikat) + " WHERE date = '" + req.body.varausLahtopaiva + "' AND time = '" + req.body.varausAika + "' AND destination_destination_id = '" + row.destination_id + "';");
+                sql2.push("UPDATE schedule set seats = seats + " + (req.body.varausPaikat - alkuperaisetPaikat) + " WHERE date = '" + req.body.varausLahtopaiva + "' AND time = '" + req.body.varausAika + "' AND destination_destination_id = '" + row.destination_id + "';");
+            });
+            console.log(sql4[0]);
+            console.log(sql2[0]);
+            const rows1 = await query(sql4[0]);
+            Object.keys(rows1).forEach(function (key) {
+                var row = rows1[key];
+                seats.push(row.seats);
+            });
+            if (alkuperaisetPaikat > req.body.varausPaikat) {
+                if ((seats[0] - (alkuperaisetPaikat - req.body.varausPaikat)) >= 0) {
+                    const rows2 = await query(sql2[0]);
+                    const rows3 = await query(sql1);
+                    console.log("Varausksen muokkaus onnistui!");
+                    response.write('<p id="vahvistustekstit">Varauksen muokkaus onnistui!</p>');
+                } else {
+                    response.write('<p id="vahvistustekstiterror">Varauksen vahvistus epäonnistui! Koneessa tilaa ' + seats + ' paikkaa</p>');
+                }
+            } else {
+
+            }
+
             response.end();
         }
         catch (err) {
@@ -222,7 +253,7 @@ app.post('/public/varausvahvistus.html', function (req, response) {
             let sql1 = [];
             let sql4 = [];
             let seats = [];
-            const rows = await query(sql);
+
             const rows1 = await query(sql2);
             console.log(rows1);
 
@@ -241,6 +272,7 @@ app.post('/public/varausvahvistus.html', function (req, response) {
             });
 
             if ((seats - req.body.maara) >= 0) {
+                const rows = await query(sql);
                 const rows2= await query(sql1[0]);
                 console.log("Varausksen vahvistus onnistui!");
                 response.write('<p id="vahvistustekstit">Varauksen vahvistus onnistui!</p>');
