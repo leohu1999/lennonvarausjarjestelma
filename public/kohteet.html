@@ -21,6 +21,8 @@
 
 <script>
     function myFunction(x) {
+        localStorage.setItem("kohteetmaa", x.cells[1].innerHTML);
+        localStorage.setItem("kohteetkohde", x.cells[0].innerHTML);
         window.location = 'kohde.html';
     }
 </script>
