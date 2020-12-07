@@ -32,7 +32,6 @@ var akkilahdot = fs.readFileSync(__dirname + '/public/akkilahdot.html', "utf-8")
 var kohteet = fs.readFileSync(__dirname + '/public/kohteet.html', "utf-8");
 var varaus = fs.readFileSync(__dirname + '/public/varaus.html', "utf-8");
 var varausvahvistus = fs.readFileSync(__dirname + "/public/varausvahvistus.html","utf-8");
-var kohdehtml = fs.readFileSync(__dirname + "/public/kohde.html","utf-8");
 var omat = fs.readFileSync(__dirname + '/public/omat.html', "utf-8");
 var muokkaus = fs.readFileSync(__dirname + '/public/muokkaus.html', "utf-8");
 
@@ -139,44 +138,6 @@ app.post('/public/akkilahdot.html', function (req, response) {
     })()
     //res.sendFile(path.join(__dirname + '/public/akkilahdot.html'));
     console.log("Äkkilähdöt ladattu!");
-
-});
-
-app.get('/public/kohde.html', function (req, response) {
-    response.writeHead(200, {"Content-Type": "text/html"});
-    response.write(kohdehtml);
-    response.write('<table id="lennot"><tr>');
-    response.write('<td><label>Lähtöaika</label></td>');
-    response.write('<td><label>Päivämäärä</label></td>');
-    response.write('<td><label>Kohde</label></td>');
-    response.write('<td><label>Maa</label></td>');
-    response.write('<td><label>Jäljellä olevat paikat</label></td>');
-    response.write('</tr>');
-
-    let sql = "SELECT * FROM schedule;";
-    (async () => {
-        try {
-            const rows = await query(sql);
-            console.log(rows);
-            Object.keys(rows).forEach(function (key) {
-                var row = rows[key];
-                var date = row.date
-                response.write('<tr onclick="myFunction(this)">');
-                response.write('<td>'+ row.time +'</td>');
-                response.write('<td>'+ date.getFullYear() + '-' + (date.getUTCMonth()+1) + '-' +(date.getUTCDate()+1)+'</td>');
-                response.write('<td>' + row.destination_name + '</td>');
-                response.write('<td>' + row.country + '</td>');
-                response.write('<td>'+ row.seats +'</td>');
-                response.write('</tr>');
-
-            });
-            response.end('</table>')
-        }
-        catch (err) {
-            console.log("Database error!"+ err);
-        }
-    })()
-    console.log("Kohde ladattu!");
 
 });
 
