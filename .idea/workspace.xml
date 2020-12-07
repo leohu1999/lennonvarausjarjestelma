@@ -21,7 +21,8 @@
   <component name="ChangeListManager">
     <list default="true" id="77737cd1-010a-4474-9433-e546030cda9b" name="Default Changelist" comment="Korjauksia">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/LennotTietokanta.sql" beforeDir="false" afterPath="$PROJECT_DIR$/LennotTietokanta.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/akkilahdot.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/akkilahdot.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/serveri.js" beforeDir="false" afterPath="$PROJECT_DIR$/serveri.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -132,13 +133,7 @@
       <workItem from="1607072821562" duration="1112000" />
       <workItem from="1607074696699" duration="3243000" />
       <workItem from="1607257748182" duration="1720000" />
-      <workItem from="1607324431948" duration="372000" />
-    </task>
-    <task id="LOCAL−00005" summary="yes">
-      <created>1605860478261</created>
-      <option name="number" value="LOCAL−00005" />
-      <option name="presentableId" value="LOCAL−00005" />
-      <updated>1605860478261</updated>
+      <workItem from="1607324431948" duration="1421000" />
     </task>
     <task id="LOCAL−00006" summary="yes">
       <created>1605860504117</created>
@@ -428,7 +423,13 @@
       <option name="presentableId" value="LOCAL−00053" />
       <updated>1607263711651</updated>
     </task>
-    <option name="localTasksCounter" value="54" />
+    <task id="LOCAL−00054" summary="Korjauksia">
+      <created>1607324878896</created>
+      <option name="number" value="LOCAL−00054" />
+      <option name="presentableId" value="LOCAL−00054" />
+      <updated>1607324878896</updated>
+    </task>
+    <option name="localTasksCounter" value="55" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -471,17 +472,17 @@
     <MESSAGE value="Omat varaukset.html" />
     <MESSAGE value="SQL muutoksia" />
     <MESSAGE value="Äkkibutton muutos" />
-    <MESSAGE value="Korjauksia" />
     <MESSAGE value="CSS korjauksia" />
     <MESSAGE value="Korjauksia serveriin" />
     <MESSAGE value="Kaikki Kohteet muutoksia" />
-    <option name="LAST_COMMIT_MESSAGE" value="Kaikki Kohteet muutoksia" />
+    <MESSAGE value="Korjauksia" />
+    <option name="LAST_COMMIT_MESSAGE" value="Korjauksia" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1607277370557">
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1607324881458">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1607277370557" />
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1607324881458" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

@@ -26,6 +26,8 @@
 <script>
 
     function myFunction(x) {
+        var d = new Date();
+        localStorage.setItem("lahtopaiva", ""+ d.getFullYear() + '-' + (d.getUTCMonth()+1) + '-' +d.getUTCDate()+"");
         localStorage.setItem("maa", x.cells[2].innerHTML);
         localStorage.setItem("maara", "0");
         localStorage.setItem("kohde", x.cells[1].innerHTML);

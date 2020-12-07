@@ -155,7 +155,6 @@ app.get('/public/varausvahvistus.html', function (req, response) {
     response.writeHead(200, {"Content-Type": "text/html"});
     response.write(varausvahvistus);
     response.end();
-
     //res.sendFile(path.join(__dirname + '/public/varausvahvistus.html'));
     console.log("Varausvahvistus ladattu!");
 
@@ -172,7 +171,7 @@ app.post('/public/akkilahdot.html', function (req, response) {
     response.write('<td><label>Jäljellä olevat paikat</label></td>');
     response.write('</tr>');
 
-    let sql = "SELECT time, destination_destination_id, seats FROM schedule WHERE date = '" + d.getFullYear() + "-" + month + "-" +d.getUTCDate()+ "' AND time >= '" +req.body.Startdate+ "' AND time <= '" + req.body.Enddate + "';";
+    let sql = "SELECT time, destination_destination_id, seats FROM schedule WHERE date = '" + d.getFullYear() + "-" + month + "-" +(d.getUTCDate()+1)+ "' AND time >= '" +req.body.Startdate+ "' AND time <= '" + req.body.Enddate + "';";
     console.log(sql);
     (async () => {
         try {
