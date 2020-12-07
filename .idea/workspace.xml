@@ -20,7 +20,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="77737cd1-010a-4474-9433-e546030cda9b" name="Default Changelist" comment="Siistimistä">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/serveri.js" beforeDir="false" afterPath="$PROJECT_DIR$/serveri.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -135,13 +134,7 @@
       <workItem from="1607324431948" duration="1421000" />
       <workItem from="1607327621156" duration="1584000" />
       <workItem from="1607330627876" duration="86000" />
-      <workItem from="1607330727844" duration="425000" />
-    </task>
-    <task id="LOCAL−00009" summary="CSS tyylejä ja fontit">
-      <created>1606247075667</created>
-      <option name="number" value="LOCAL−00009" />
-      <option name="presentableId" value="LOCAL−00009" />
-      <updated>1606247075667</updated>
+      <workItem from="1607330727844" duration="765000" />
     </task>
     <task id="LOCAL−00010" summary="Logo, html-sivut sekä hieman CSS-korjauksia.">
       <created>1606255675973</created>
@@ -431,7 +424,13 @@
       <option name="presentableId" value="LOCAL−00057" />
       <updated>1607330851983</updated>
     </task>
-    <option name="localTasksCounter" value="58" />
+    <task id="LOCAL−00058" summary="Siistimistä">
+      <created>1607331194643</created>
+      <option name="number" value="LOCAL−00058" />
+      <option name="presentableId" value="LOCAL−00058" />
+      <updated>1607331194643</updated>
+    </task>
+    <option name="localTasksCounter" value="59" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -479,20 +478,6 @@
     <MESSAGE value="Siistimistä" />
     <MESSAGE value="Korjauksia" />
     <option name="LAST_COMMIT_MESSAGE" value="Korjauksia" />
-  </component>
-  <component name="WindowStateProjectService">
-    <state x="184" y="86" key="MergeDialog" timestamp="1607330954809">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="184" y="86" key="MergeDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1607330954809" />
-    <state x="598" y="281" key="MultipleFileMergeDialog" timestamp="1607330956391">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="598" y="281" key="MultipleFileMergeDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1607330956391" />
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1607330964686">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1607330964686" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

@@ -123,10 +123,10 @@ app.post('/public/akkilahdot.html', function (req, response) {
                 Object.keys(rows2).forEach(function (key) {
                     var row = rows2[key];
                     response.write('<tr onclick="myFunction(this)">');
-                    response.write('<td><label class="label">' + rows[i].time + '</label></td>');
-                    response.write('<td><label class="label">' + row.destination_name+ '</label></td>');
-                    response.write('<td><label class="label">' + row.country+ '</label></td>');
-                    response.write('<td><label class="label">' + rows[i].seats + '</label></td>');
+                    response.write('<td>' + rows[i].time + '</td>');
+                    response.write('<td>' + row.destination_name+ '</td>');
+                    response.write('<td>' + row.country+ '</td>');
+                    response.write('<td>' + rows[i].seats + '</td>');
                     response.write('</tr>');
                 });
             }
