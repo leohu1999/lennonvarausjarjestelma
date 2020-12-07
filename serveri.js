@@ -197,7 +197,7 @@ app.post('/public/muokkaus.html', function (req, response) {
                 var row = rows[key];
                 sql4.push("SELECT seats FROM schedule WHERE date = '" + req.body.varausLahtopaiva +"' AND time = '"+ req.body.varausAika +"' AND destination_destination_id = '" + row.destination_id + "';");
                 sql2.push("UPDATE schedule set seats = seats + " + (alkuperaisetPaikat - req.body.varausPaikat) + " WHERE date = '" + req.body.varausLahtopaiva + "' AND time = '" + req.body.varausAika + "' AND destination_destination_id = '" + row.destination_id + "';");
-                sql2.push("UPDATE schedule set seats = seats + " + (req.body.varausPaikat - alkuperaisetPaikat) + " WHERE date = '" + req.body.varausLahtopaiva + "' AND time = '" + req.body.varausAika + "' AND destination_destination_id = '" + row.destination_id + "';");
+                sql2.push("UPDATE schedule set seats = seats - " + (req.body.varausPaikat - alkuperaisetPaikat) + " WHERE date = '" + req.body.varausLahtopaiva + "' AND time = '" + req.body.varausAika + "' AND destination_destination_id = '" + row.destination_id + "';");
             });
             console.log(sql4[0]);
             console.log(sql2[0]);
@@ -209,14 +209,14 @@ app.post('/public/muokkaus.html', function (req, response) {
             if (alkuperaisetPaikat > req.body.varausPaikat) {
 
                     const rows2 = await query(sql2[0]);
-                    const rows3 = await query(sql1);
+                    const rows3 = await query(sql);
                     console.log("Varausksen muokkaus onnistui!");
                     response.write('<p id="vahvistustekstit">Varauksen muokkaus onnistui!</p>');
 
             } else {
                 if ((seats[0] - (req.body.varausPaikat - alkuperaisetPaikat)) >= 0) {
                     const rows2 = await query(sql2[1]);
-                    const rows3 = await query(sql1);
+                    const rows3 = await query(sql);
                     response.write('<p id="vahvistustekstit">Varauksen muokkaus onnistui!</p>');
                 } else {
                     response.write('<p id="vahvistustekstiterror">Varauksen muokkaus epäonnistui! Koneessa tilaa ' + seats+' paikkaa</p>');
