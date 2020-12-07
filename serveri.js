@@ -145,8 +145,8 @@ app.get('/public/kohteet.html', function (req, response) {
     response.writeHead(200, {"Content-Type": "text/html"});
     response.write(kohteet);
     response.write('<table id="lennot"><tr>');
-    response.write('<td><label>Destination</label></td>');
-    response.write('<td><label>Country</label></td>');
+    response.write('<td><label>Kohde</label></td>');
+    response.write('<td><label>Maa</label></td>');
     response.write('</tr>');
 
     let sql = "SELECT * FROM destination;";
@@ -156,7 +156,7 @@ app.get('/public/kohteet.html', function (req, response) {
             console.log(rows);
             Object.keys(rows).forEach(function (key) {
                 var row = rows[key];
-                response.write('<tr onclick="myFunction(this)">');
+                response.write('<tr>');
                 response.write('<td><label class="label">' + row.destination_name+ '</label></td>');
                 response.write('<td><label class="label">' + row.country+ '</label></td>');
                 response.write('</tr>');
