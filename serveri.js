@@ -147,6 +147,7 @@ var akkilahdot = fs.readFileSync(__dirname + '/public/akkilahdot.html', "utf-8")
 var kohteet = fs.readFileSync(__dirname + '/public/kohteet.html', "utf-8");
 var varaus = fs.readFileSync(__dirname + '/public/varaus.html', "utf-8");
 var varausvahvistus = fs.readFileSync(__dirname + "/public/varausvahvistus.html","utf-8");
+var kohdehtml = fs.readFileSync(__dirname + "/public/kohde.html","utf-8");
 var kohde;
 var lahtoaika;
 var maara;
@@ -309,7 +310,6 @@ app.get('/public/kohteet.html', function (req, response) {
     response.write('<table id="lennot"><tr>');
     response.write('<td><label>Destination</label></td>');
     response.write('<td><label>Country</label></td>');
-
     response.write('</tr>');
 
     let sql = "SELECT * FROM destination;";
@@ -335,46 +335,41 @@ app.get('/public/kohteet.html', function (req, response) {
     console.log("Kohteet ladattu!");
 
 });
-app.post('/public/kohteet.html', function (req, response) {
-
+app.get('/public/kohde.html', function (req, response) {
     response.writeHead(200, {"Content-Type": "text/html"});
-    response.write(kohteet);
+    response.write(kohdehtml);
+    response.write('<table id="lennot"><tr>');
+    response.write('<td><label>Lähtöaika</label></td>');
+    response.write('<td><label>Päivämäärä</label></td>');
+    response.write('<td><label>Kohde</label></td>');
+    response.write('<td><label>Maa</label></td>');
+    response.write('<td><label>Jäljellä olevat paikat</label></td>');
+    response.write('</tr>');
 
-    let sql = "SELECT * from schedule";
-    console.log(sql);
+    let sql = "SELECT * FROM schedule;";
     (async () => {
         try {
-
-            let sql1 = [];
             const rows = await query(sql);
-            let string = JSON.stringify(rows);
-
+            console.log(rows);
             Object.keys(rows).forEach(function (key) {
                 var row = rows[key];
-                sql1.push("SELECT * FROM destination WHERE destination_id='" + row.destination_destination_id + "';");
+                var date = row.date
+                response.write('<tr onclick="myFunction(this)">');
+                response.write('<td>'+ row.time +'</td>');
+                response.write('<td>'+ date.getFullYear() + '-' + (date.getUTCMonth()+1) + '-' +(date.getUTCDate()+1)+'</td>');
+                response.write('<td>' + row.destination_name + '</td>');
+                response.write('<td>' + row.country + '</td>');
+                response.write('<td>'+ row.seats +'</td>');
+                response.write('</tr>');
 
             });
-
-            for (var i = 0; i < sql1.length; i++) {
-                const rows2 = await query(sql1[i]);
-                Object.keys(rows2).forEach(function (key) {
-                    var row = rows2[key];
-                    response.write('<tr onclick="myFunction(this)">');
-                    response.write('<td><label class="label">' + rows[i].time + '</label></td>');
-                    response.write('<td><label class="label">' + row.destination_name+ '</label></td>');
-                    response.write('<td><label class="label">' + row.country+ '</label></td>');
-                    response.write('<td><label class="label">' + rows[i].seats + '</label></td>');
-                    response.write('</tr>');
-                });
-            }
-            response.end('</table>');
+            response.end('</table>')
         }
         catch (err) {
             console.log("Database error!"+ err);
         }
     })()
-    //res.sendFile(path.join(__dirname + '/public/akkilahdot.html'));
-    console.log("Kohteet ladattu!");
+    console.log("Kohde ladattu!");
 
 });
 

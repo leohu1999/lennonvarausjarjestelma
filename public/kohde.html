@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Kaikki Kohteet</title>
+    <title>Kohde</title>
     <link rel="stylesheet" href="/css/styles.css">
 </head>
 <body>
@@ -13,15 +13,18 @@
         <li><a href="../public/varaus.html">Varaa Lento</a></li>
         <li><a href="../public/omat.html">Omat Varaukset</a></li>
         <li><a href="../public/akkilahdot.html">Äkkilähdöt</a></li>
-        <li class="active"><a href="../public/kohteet.html">Kaikki Kohteet</a></li>
+        <li><a href="../public/kohteet.html">Kaikki Kohteet</a></li>
         <li><a href="../public/ohjeet.html">Ohjeet</a></li>
     </ul>
 </nav>
-<h1>Kaikki Kohteet</h1>
+<h1>Kohteen lennot</h1>
 
 <script>
     function myFunction(x) {
-        window.location = 'kohde.html';
+        localStorage.setItem("maa", x.cells[2].innerHTML);
+        localStorage.setItem("kohde", x.cells[1].innerHTML);
+        localStorage.setItem("aika", x.cells[0].innerHTML);
+        window.location = 'varausvahvistus.html';
     }
 </script>
 </body>
