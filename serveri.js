@@ -156,9 +156,9 @@ app.get('/public/kohteet.html', function (req, response) {
             console.log(rows);
             Object.keys(rows).forEach(function (key) {
                 var row = rows[key];
-                response.write('<tr>');
-                response.write('<td><label class="label">' + row.destination_name+ '</label></td>');
-                response.write('<td><label class="label">' + row.country+ '</label></td>');
+                response.write('<tr onclick="Hae(this)">');
+                response.write('<td>' + row.destination_name+ '</td>');
+                response.write('<td>' + row.country+ '</td>');
                 response.write('</tr>');
 
             });
@@ -436,6 +436,53 @@ app.post('/public/varausvahvistus.html', function (req, response) {
         }
     })()
 
+});
+app.get('/public/:id', function(req, response) {
+    response.writeHead(200, {"Content-Type": "text/html"});
+    response.write(kohteet);
+    response.write('<table id="lennot"><tr>');
+    response.write('<td><label>LähtöPäivä</label></td>');
+    response.write('<td><label>Lähtöaika</label></td>');
+    response.write('<td><label>Kohde</label></td>');
+    response.write('<td><label>Maa</label></td>');
+    response.write('<td><label>Jäljellä olevat paikat</label></td>');
+    response.write('</tr>');
+    const quer = req.query.name;
+    console.log(quer);
+    let sql = "SELECT destination_name, country, destination_id FROM destination WHERE destination_name='" + quer + "';";
+    (async () => {
+        try {
+
+            let sql1 = [];
+            const rows = await query(sql);
+            console.log(rows);
+            Object.keys(rows).forEach(function (key) {
+                var row = rows[key];
+                sql1.push("SELECT date, time, destination_destination_id, seats FROM schedule WHERE destination_destination_id ='" + row.destination_id + "';");
+
+            });
+            const rows2 = await query(sql1[0]);
+            console.log(rows2);
+            Object.keys(rows2).forEach(function (key) {
+                var row = rows2[key];
+                let date = row.date;
+                response.write('<tr onclick="myFunction(this)">');
+                response.write('<td>' + date.getFullYear() + '-' + (date.getUTCMonth()+1) + '-' +(date.getUTCDate()+1)+ '</td>');
+                response.write('<td>' + row.time + '</td>');
+                response.write('<td>' + rows[0].destination_name + '</td>');
+                response.write('<td>' + rows[0].country + '</td>');
+                response.write('<td>' + row.seats + '</td>');
+                response.write('</tr>');
+            });
+
+        response.end('</table>')
+    }
+        catch (err) {
+            console.log("Database error!"+ err);
+        }
+    })()
+    //res.sendFile(path.join(__dirname + '/public/akkilahdot.html'));
+    console.log("Kohteet ladattu!");
 });
 
 const server = app.listen(8080, function () {
