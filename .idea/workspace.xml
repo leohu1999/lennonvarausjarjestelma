@@ -19,9 +19,7 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="77737cd1-010a-4474-9433-e546030cda9b" name="Default Changelist" comment="Siistimistä">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/LennotTietokanta.sql" beforeDir="false" afterPath="$PROJECT_DIR$/LennotTietokanta.sql" afterDir="false" />
+    <list default="true" id="77737cd1-010a-4474-9433-e546030cda9b" name="Default Changelist" comment="Korjauksia">
       <change beforePath="$PROJECT_DIR$/serveri.js" beforeDir="false" afterPath="$PROJECT_DIR$/serveri.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -139,12 +137,6 @@
       <workItem from="1607330727844" duration="765000" />
       <workItem from="1607332758742" duration="2774000" />
       <workItem from="1607445373101" duration="3005000" />
-    </task>
-    <task id="LOCAL−00011" summary="Varaus.html">
-      <created>1606302975995</created>
-      <option name="number" value="LOCAL−00011" />
-      <option name="presentableId" value="LOCAL−00011" />
-      <updated>1606302975995</updated>
     </task>
     <task id="LOCAL−00012" summary="Korjauksia ja ohjeisiin lisäyksiä">
       <created>1606335496905</created>
@@ -434,7 +426,13 @@
       <option name="presentableId" value="LOCAL−00059" />
       <updated>1607335541781</updated>
     </task>
-    <option name="localTasksCounter" value="60" />
+    <task id="LOCAL−00060" summary="Korjauksia">
+      <created>1607505113586</created>
+      <option name="number" value="LOCAL−00060" />
+      <option name="presentableId" value="LOCAL−00060" />
+      <updated>1607505113586</updated>
+    </task>
+    <option name="localTasksCounter" value="61" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -482,6 +480,12 @@
     <MESSAGE value="Siistimistä" />
     <MESSAGE value="Korjauksia" />
     <option name="LAST_COMMIT_MESSAGE" value="Korjauksia" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1607505122998">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1607505122998" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

@@ -458,7 +458,7 @@ app.get('/public/:id', function(req, response) {
             console.log(rows);
             Object.keys(rows).forEach(function (key) {
                 var row = rows[key];
-                sql1.push("SELECT date, time, destination_destination_id, seats FROM schedule WHERE destination_destination_id ='" + row.destination_id + "' AND date = '" + d.getFullYear() + "-" + month + "-" +d.getUTCDate()+ "';");
+                sql1.push("SELECT date, time, destination_destination_id, seats FROM schedule WHERE destination_destination_id ='" + row.destination_id + "' AND date >= '" + d.getFullYear() + "-" + month + "-" +d.getUTCDate()+ "';");
 
             });
             const rows2 = await query(sql1[0]);
