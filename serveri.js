@@ -441,7 +441,7 @@ app.get('/public/:id', function(req, response) {
     response.writeHead(200, {"Content-Type": "text/html"});
     response.write(kohteet);
     response.write('<table id="lennot"><tr>');
-    response.write('<td><label>LähtöPäivä</label></td>');
+    response.write('<td><label>Lähtöpäivä</label></td>');
     response.write('<td><label>Lähtöaika</label></td>');
     response.write('<td><label>Kohde</label></td>');
     response.write('<td><label>Maa</label></td>');
