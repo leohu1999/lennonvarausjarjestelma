@@ -16,16 +16,16 @@ Klikkaamalla lentoa pääsee varaamaan lennon.
 APP.GET /public/kohteet.html:
 
 Avaa kohteet.html ja luo taulukon tietokantakyselyllä, jossa näkyvät kaikki mahdolliset kohteet ja niiden maat.
-Klikkaamalla kohdetta pääsee tarkastelemaan kaikki kohteeseen meneviä lentoja.
+Klikkaamalla kohdetta pääsee tarkastelemaan kaikkia kohteeseen meneviä lentoja.
 
 APP.GET /public/muokkaus.html:
 
-Avaa muokkaus.html.
+Avaa muokkaus.html, jossa näkyy käyttäjän valitseman muokattavan lennon tiedot.
 
 APP.POST /public/muokkaus.html:
 
 "Vahvista muokkaukset"-nappi päivittää annetun paikkojen määrän tietokantaan ja tarkistaa onko lennolla tarpeeksi
-paikkoja ja antaa viestin "Muokkaus onnistui" tai "Muokkaus epäonnistui" sen mukaisesti.
+paikkoja ja antaa viestin "Muokkaus onnistui" tai "Muokkaus epäonnistui" sen mukaisesti. Tietokanta päivittyy muokkauksen mukaisesti, jos lennolla on tilaa.
 
 APP.POST /public/poisto:
 
@@ -57,7 +57,7 @@ Ohjaa haku-kohtaan tämän jälkeen.
 
 APP.GET /public/varausvahvistus.html:
 
-Avaa varausvahvistus.html.
+Avaa varausvahvistus.html, johon tulee käyttäjän valitseman lennon tiedot. Varattuja paikkoja pystyy vielä muuttamaan.
 
 APP.POST /public/varausvahvistus.html:
 
