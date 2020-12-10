@@ -24,7 +24,10 @@
     <button id="äkkibutton" type="submit">Hae</button>
 </form>
 <script>
-
+    /*
+    funktion avulla asetetaan tämän päivän tiedot, joita äkkilähdön haussa vain on sekä käyttäjän valitseman taulukon rivin tiedot,
+     jotka asetetaan myöhemmin varausvahvistus.html-sivulla, johon myös käyttäjä window.location avulla ohjataan.
+     */
     function myFunction(x) {
         var d = new Date();
         localStorage.setItem("lahtopaiva", ""+ d.getFullYear() + '-' + (d.getUTCMonth()+1) + '-' +d.getUTCDate()+"");

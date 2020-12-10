@@ -19,6 +19,9 @@
 </nav>
 <h1>Omat Varaukset</h1>
 <script>
+    /*
+    functiolla remove(x) tallennetaan poistettavan lennon tiedot localstorageen. Käyttäjä viedään myös muokkaus.html sivulle window.locationin avulla
+     */
     function remove(x) {
         localStorage.setItem("id", x.cells[0].innerHTML);
         localStorage.setItem("varausAika", x.cells[1].innerHTML);

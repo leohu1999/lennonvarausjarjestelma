@@ -21,6 +21,10 @@
 
 </body>
 <script>
+    /*
+    funktiolla Hae(x) asetetaan uusi url-osoite sivulle, johon nimen tiedoksi tulee käyttäjän valitseman kohteen nimi(esim. Pariisi).
+    Tämän avulla pystyy tekemään sql-kyselyn halutusta lennosta.
+     */
     function Hae(x) {
         window.location.href = 'http://localhost:8080/public/destination?name='+ x.cells[0].innerHTML;
     }

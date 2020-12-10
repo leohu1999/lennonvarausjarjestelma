@@ -32,6 +32,9 @@
 </div>
 </form>
 <script>
+    /*
+    Teksti/input kenttiin sijoitetaan käyttäjän valitseman lennon tiedot, jotka on tuodaan localstoragen avulla tälle sivulle
+     */
     document.getElementById("vahvistustekstit1").innerHTML = "Koneen lähtöaika: "+ localStorage.getItem("aika");
     document.getElementById("vahvistustekstit2").innerHTML = "Kohde: "+ localStorage.getItem("kohde");
     document.getElementById("vahvistustekstit3").innerHTML = "Lähtöpäivä: "+ localStorage.getItem("lahtopaiva");

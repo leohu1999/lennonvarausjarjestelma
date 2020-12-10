@@ -42,12 +42,18 @@
 
 </form>
 <script>
+    /*
+    Funktiolla tallenna() nimen mukaan tallennetaan käyttäjän antamat tiedot input-kentistä ocalstorageen
+     */
     function tallenna() {
         var name = document.getElementById("input2").value;
         var name1 = document.getElementById("input3").value;
         localStorage.setItem("lahtopaiva", name);
         localStorage.setItem("maara", name1);
     }
+    /*
+    myFunction(x) avulla tuodaan taulusta käyttäjän valitseman rivin tarpeelliset tiedot.
+     */
     function myFunction(x) {
         localStorage.setItem("maa", x.cells[2].innerHTML);
         localStorage.setItem("kohde", x.cells[1].innerHTML);

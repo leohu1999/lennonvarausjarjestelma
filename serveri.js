@@ -332,10 +332,6 @@ app.get('/public/haku', function (req, response) {
     })()
 });
 
-app.post('/public/haku', function(req,res){
-    console.log(req.body.aika);
-});
-
 app.get('/public/varaus.html', function (req, res) {
     res.sendFile(path.join(__dirname + '/public/varaus.html'));
     console.log("Varaa lento ladattu!");

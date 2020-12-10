@@ -35,11 +35,16 @@
         </form>
     </div>
 <script>
+    /*
+    Funktiolla paivita() päivitetään käyttäjän antama varauspaikkojen määrä vahvistamisen jälkeen. Tämä paikkojen määrä jää input-kenttään
+     */
     function paivita() {
         var tieto = document.getElementById("vahvistusteksti5").value
         localStorage.setItem("varausPaikat", tieto);
     }
-
+    /*
+    Teksti/input kenttiin sijoitetaan käyttäjän valitseman muokattavan varauksen tiedot, jotka on tuodaan localstoragen avulla tälle sivulle
+     */
     document.getElementById("vahvistustekstit1").innerHTML = "Koneen lähtöaika: "+ localStorage.getItem("varausAika");
     document.getElementById("vahvistustekstit2").innerHTML = "Kohde: "+ localStorage.getItem("varausKohde");
     document.getElementById("vahvistustekstit3").innerHTML = "Lähtöpäivä: "+ localStorage.getItem("varausLahtopaiva");
