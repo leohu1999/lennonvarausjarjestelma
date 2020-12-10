@@ -11,7 +11,6 @@ const url = require('url');
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json());
 
-// Yhteyden luominen tietokantaan
 const con = mysql.createConnection({
     host: "localhost",
     user: "olso",
@@ -22,7 +21,6 @@ const con = mysql.createConnection({
 const query = util.promisify(con.query).bind(con);
 app.use(express.static(path.join(__dirname, 'public')));
 
-// Päivämäärä muuttujien luominen, html-sivujen tuominen muuttujiin.
 var d = new Date();
 var hour = d.getUTCHours() +2;
 var minute = d.getUTCMinutes();
@@ -37,19 +35,12 @@ var varausvahvistus = fs.readFileSync(__dirname + "/public/varausvahvistus.html"
 var omat = fs.readFileSync(__dirname + '/public/omat.html', "utf-8");
 var muokkaus = fs.readFileSync(__dirname + '/public/muokkaus.html', "utf-8");
 
-//Etusivun lataaminen
-app.get('/', function (req, res) {
-    res.sendFile(path.join(__dirname + '/public/index.html'));
-    console.log("Etusivu ladattu!");
 
-})
-//Etusivun lataaminen
 app.get('/public/index.html', function (req, res) {
     res.sendFile(path.join(__dirname + '/public/index.html'));
     console.log("Etusivu ladattu!");
 
 })
-
 
 app.get('/public/akkilahdot.html', function (req, response) {
     response.writeHead(200, {"Content-Type": "text/html"});
