@@ -19,9 +19,10 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="77737cd1-010a-4474-9433-e546030cda9b" name="Default Changelist" comment="Kommentointia">
+    <list default="true" id="77737cd1-010a-4474-9433-e546030cda9b" name="Default Changelist" comment="Korjauksia">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Readme.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Readme.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/serveri.js" beforeDir="false" afterPath="$PROJECT_DIR$/serveri.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -138,7 +139,7 @@
       <workItem from="1607330727844" duration="765000" />
       <workItem from="1607332758742" duration="2774000" />
       <workItem from="1607445373101" duration="3005000" />
-      <workItem from="1607583504502" duration="1676000" />
+      <workItem from="1607583504502" duration="2793000" />
     </task>
     <task id="LOCAL−00014" summary="Äkkilähdöt automaattinen aikahaku ja valinnainen aikahaku">
       <created>1606477519590</created>
@@ -428,11 +429,11 @@
       <option name="presentableId" value="LOCAL−00061" />
       <updated>1607505249856</updated>
     </task>
-    <task id="LOCAL−00062" summary="Kommentointia">
-      <created>1607587044682</created>
+    <task id="LOCAL−00062" summary="Korjauksia">
+      <created>1607586868190</created>
       <option name="number" value="LOCAL−00062" />
       <option name="presentableId" value="LOCAL−00062" />
-      <updated>1607587044682</updated>
+      <updated>1607586868190</updated>
     </task>
     <option name="localTasksCounter" value="63" />
     <servers />
@@ -456,6 +457,7 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
+    <MESSAGE value="Logo, html-sivut sekä hieman CSS-korjauksia." />
     <MESSAGE value="Varaus.html" />
     <MESSAGE value="Korjauksia ja ohjeisiin lisäyksiä" />
     <MESSAGE value="Äkkilähdöt toimintaan" />
@@ -480,8 +482,17 @@
     <MESSAGE value="Kaikki Kohteet muutoksia" />
     <MESSAGE value="Siistimistä" />
     <MESSAGE value="Korjauksia" />
-    <MESSAGE value="Kommentointia" />
-    <option name="LAST_COMMIT_MESSAGE" value="Kommentointia" />
+    <option name="LAST_COMMIT_MESSAGE" value="Korjauksia" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1607587061491">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1607587061491" />
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1607586623409">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1607586623409" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

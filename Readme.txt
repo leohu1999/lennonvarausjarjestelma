@@ -69,3 +69,5 @@ APP.GET /public/:id:
 URL-osoitteesta haetaan nimi, jonka perusteella luodaan tietokannasta taulukko, josta näkyvät kaikki kohteen lennot.
 URL-osoitteeseen nimi tulee, kun klikkaa kohdetta "Kaikki kohteet"-osiossa.
 
+
+
